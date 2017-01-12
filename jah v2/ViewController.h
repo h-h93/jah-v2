@@ -7,9 +7,30 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "AppDelegate.h"
+#import "CheckConnections.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <CLLocationManagerDelegate>{
 
+    
+    IBOutlet UIView *logInView;    
+    IBOutlet UILabel *titleLbl;
+    IBOutlet UIButton *fbBtn;
+    BOOL loggedInVar;
+    BOOL connectedToNet;
+    CLLocationManager *locationManager;
+    CLGeocoder *geocoder;
+    CLPlacemark *placemark;
+    
+    
+}
+@property BOOL loggedInVar;
+
+- (void)LoggedIn;
+
+- (void)networkStatus;
 
 @end
 

@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		341BEC018E6C50C4E9839EAE /* libPods-jah v2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 906DC3FBCB067334F6D74205 /* libPods-jah v2.a */; };
+		480415551DF5E552002D6422 /* profileTabViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 480415541DF5E552002D6422 /* profileTabViewViewController.m */; };
+		480415571DFCCA60002D6422 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 480415561DFCCA60002D6422 /* AudioToolbox.framework */; };
+		4823E16D1DAFF47400C1BDEA /* FirstTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4823E16C1DAFF47400C1BDEA /* FirstTabView.m */; };
+		4823E17C1DB0504800C1BDEA /* profileBtnSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4823E17B1DB0504800C1BDEA /* profileBtnSegue.m */; };
+		4823E1801DB3ED7F00C1BDEA /* CheckConnections.m in Sources */ = {isa = PBXBuildFile; fileRef = 4823E17F1DB3ED7F00C1BDEA /* CheckConnections.m */; };
+		4823E1831DB3F34A00C1BDEA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4823E1821DB3F34A00C1BDEA /* SystemConfiguration.framework */; };
+		4823E1891DB45A2400C1BDEA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4823E1881DB45A2400C1BDEA /* Reachability.m */; };
+		4823E18C1DB54E0600C1BDEA /* ViewControllerCustomSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4823E18B1DB54E0600C1BDEA /* ViewControllerCustomSegue.m */; };
+		4823E18E1DB572A100C1BDEA /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4823E18D1DB572A100C1BDEA /* AVKit.framework */; };
+		4823E1901DB66E9B00C1BDEA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4823E18F1DB66E9B00C1BDEA /* CoreLocation.framework */; };
+		48480F601DE20F0F00887C56 /* firstTabScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 48480F5F1DE20F0F00887C56 /* firstTabScroll.m */; };
+		4874777D1DDB840100C16154 /* peopleBtnSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4874777C1DDB840100C16154 /* peopleBtnSegue.m */; };
+		488054E61DBAAA99007B0C0D /* mainTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 488054E51DBAAA99007B0C0D /* mainTabController.m */; };
+		48A8DE331E020B210067EC8A /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A8DE321E020B210067EC8A /* AsyncImageView.m */; };
+		48AF4F271DEE58A500263F06 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AF4F261DEE58A500263F06 /* Person.m */; };
 		48D2F66B1DA887FA00224A03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D2F66A1DA887FA00224A03 /* main.m */; };
 		48D2F66E1DA887FA00224A03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D2F66D1DA887FA00224A03 /* AppDelegate.m */; };
 		48D2F6711DA887FA00224A03 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D2F6701DA887FA00224A03 /* ViewController.m */; };
@@ -16,6 +32,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D913EACE6B477EFC9F4E97D /* Pods-jah v2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jah v2.release.xcconfig"; path = "Pods/Target Support Files/Pods-jah v2/Pods-jah v2.release.xcconfig"; sourceTree = "<group>"; };
+		480415531DF5E552002D6422 /* profileTabViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = profileTabViewViewController.h; sourceTree = "<group>"; };
+		480415541DF5E552002D6422 /* profileTabViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = profileTabViewViewController.m; sourceTree = "<group>"; };
+		480415561DFCCA60002D6422 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		4823E16B1DAFF47400C1BDEA /* FirstTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstTabView.h; sourceTree = "<group>"; };
+		4823E16C1DAFF47400C1BDEA /* FirstTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstTabView.m; sourceTree = "<group>"; };
+		4823E17A1DB0504800C1BDEA /* profileBtnSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = profileBtnSegue.h; sourceTree = "<group>"; };
+		4823E17B1DB0504800C1BDEA /* profileBtnSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = profileBtnSegue.m; sourceTree = "<group>"; };
+		4823E17F1DB3ED7F00C1BDEA /* CheckConnections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckConnections.m; sourceTree = "<group>"; };
+		4823E1811DB3ED8E00C1BDEA /* CheckConnections.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckConnections.h; sourceTree = "<group>"; };
+		4823E1821DB3F34A00C1BDEA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4823E1871DB45A2400C1BDEA /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		4823E1881DB45A2400C1BDEA /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		4823E18A1DB54E0600C1BDEA /* ViewControllerCustomSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerCustomSegue.h; sourceTree = "<group>"; };
+		4823E18B1DB54E0600C1BDEA /* ViewControllerCustomSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerCustomSegue.m; sourceTree = "<group>"; };
+		4823E18D1DB572A100C1BDEA /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		4823E18F1DB66E9B00C1BDEA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4844E3951DC65E2000A70224 /* jah v2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "jah v2-Bridging-Header.h"; sourceTree = "<group>"; };
+		48480F5E1DE20F0F00887C56 /* firstTabScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstTabScroll.h; sourceTree = "<group>"; };
+		48480F5F1DE20F0F00887C56 /* firstTabScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = firstTabScroll.m; sourceTree = "<group>"; };
+		4874777B1DDB840100C16154 /* peopleBtnSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = peopleBtnSegue.h; sourceTree = "<group>"; };
+		4874777C1DDB840100C16154 /* peopleBtnSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = peopleBtnSegue.m; sourceTree = "<group>"; };
+		488054E41DBAAA99007B0C0D /* mainTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainTabController.h; sourceTree = "<group>"; };
+		488054E51DBAAA99007B0C0D /* mainTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainTabController.m; sourceTree = "<group>"; };
+		48A8DE311E020B210067EC8A /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		48A8DE321E020B210067EC8A /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
+		48AF4F251DEE58A500263F06 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		48AF4F261DEE58A500263F06 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		48D2F6661DA887FA00224A03 /* jah v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "jah v2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D2F66A1DA887FA00224A03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		48D2F66C1DA887FA00224A03 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +70,9 @@
 		48D2F6751DA887FA00224A03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48D2F6781DA887FA00224A03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48D2F67A1DA887FA00224A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48D2F6801DA8880900224A03 /* jah v2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "jah v2.entitlements"; sourceTree = "<group>"; };
+		906DC3FBCB067334F6D74205 /* libPods-jah v2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-jah v2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0901C6AED3924CDDE8D0831 /* Pods-jah v2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jah v2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jah v2/Pods-jah v2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +80,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4823E1901DB66E9B00C1BDEA /* CoreLocation.framework in Frameworks */,
+				4823E18E1DB572A100C1BDEA /* AVKit.framework in Frameworks */,
+				480415571DFCCA60002D6422 /* AudioToolbox.framework in Frameworks */,
+				4823E1831DB3F34A00C1BDEA /* SystemConfiguration.framework in Frameworks */,
+				341BEC018E6C50C4E9839EAE /* libPods-jah v2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3CDE29EC181A5DB31F9B3701 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B0901C6AED3924CDDE8D0831 /* Pods-jah v2.debug.xcconfig */,
+				1D913EACE6B477EFC9F4E97D /* Pods-jah v2.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		48D2F65D1DA887FA00224A03 = {
 			isa = PBXGroup;
 			children = (
 				48D2F6681DA887FA00224A03 /* jah v2 */,
 				48D2F6671DA887FA00224A03 /* Products */,
+				48D2F6811DA8881F00224A03 /* Frameworks */,
+				3CDE29EC181A5DB31F9B3701 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,15 +121,39 @@
 		48D2F6681DA887FA00224A03 /* jah v2 */ = {
 			isa = PBXGroup;
 			children = (
+				48D2F6801DA8880900224A03 /* jah v2.entitlements */,
 				48D2F66C1DA887FA00224A03 /* AppDelegate.h */,
 				48D2F66D1DA887FA00224A03 /* AppDelegate.m */,
 				48D2F66F1DA887FA00224A03 /* ViewController.h */,
 				48D2F6701DA887FA00224A03 /* ViewController.m */,
+				4823E1871DB45A2400C1BDEA /* Reachability.h */,
+				4823E1881DB45A2400C1BDEA /* Reachability.m */,
+				4823E17F1DB3ED7F00C1BDEA /* CheckConnections.m */,
+				4823E1811DB3ED8E00C1BDEA /* CheckConnections.h */,
 				48D2F6721DA887FA00224A03 /* Main.storyboard */,
+				488054E41DBAAA99007B0C0D /* mainTabController.h */,
+				488054E51DBAAA99007B0C0D /* mainTabController.m */,
+				4823E17A1DB0504800C1BDEA /* profileBtnSegue.h */,
+				4823E17B1DB0504800C1BDEA /* profileBtnSegue.m */,
+				4874777B1DDB840100C16154 /* peopleBtnSegue.h */,
+				4874777C1DDB840100C16154 /* peopleBtnSegue.m */,
+				4823E18A1DB54E0600C1BDEA /* ViewControllerCustomSegue.h */,
+				4823E18B1DB54E0600C1BDEA /* ViewControllerCustomSegue.m */,
+				4823E16B1DAFF47400C1BDEA /* FirstTabView.h */,
+				4823E16C1DAFF47400C1BDEA /* FirstTabView.m */,
+				480415531DF5E552002D6422 /* profileTabViewViewController.h */,
+				480415541DF5E552002D6422 /* profileTabViewViewController.m */,
+				48480F5E1DE20F0F00887C56 /* firstTabScroll.h */,
+				48480F5F1DE20F0F00887C56 /* firstTabScroll.m */,
+				48AF4F251DEE58A500263F06 /* Person.h */,
+				48AF4F261DEE58A500263F06 /* Person.m */,
+				48A8DE311E020B210067EC8A /* AsyncImageView.h */,
+				48A8DE321E020B210067EC8A /* AsyncImageView.m */,
 				48D2F6751DA887FA00224A03 /* Assets.xcassets */,
 				48D2F6771DA887FA00224A03 /* LaunchScreen.storyboard */,
 				48D2F67A1DA887FA00224A03 /* Info.plist */,
 				48D2F6691DA887FA00224A03 /* Supporting Files */,
+				4844E3951DC65E2000A70224 /* jah v2-Bridging-Header.h */,
 			);
 			path = "jah v2";
 			sourceTree = "<group>";
@@ -79,6 +166,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		48D2F6811DA8881F00224A03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				480415561DFCCA60002D6422 /* AudioToolbox.framework */,
+				4823E18F1DB66E9B00C1BDEA /* CoreLocation.framework */,
+				4823E18D1DB572A100C1BDEA /* AVKit.framework */,
+				4823E1821DB3F34A00C1BDEA /* SystemConfiguration.framework */,
+				906DC3FBCB067334F6D74205 /* libPods-jah v2.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +185,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48D2F67D1DA887FA00224A03 /* Build configuration list for PBXNativeTarget "jah v2" */;
 			buildPhases = (
+				7B07E855DA146C07C48700AD /* [CP] Check Pods Manifest.lock */,
 				48D2F6621DA887FA00224A03 /* Sources */,
 				48D2F6631DA887FA00224A03 /* Frameworks */,
 				48D2F6641DA887FA00224A03 /* Resources */,
+				EAADF81292D715E61F7797EC /* [CP] Embed Pods Frameworks */,
+				32DA5C36666357441B14CE70 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -105,13 +207,28 @@
 		48D2F65E1DA887FA00224A03 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Hanif Hussain";
 				TargetAttributes = {
 					48D2F6651DA887FA00224A03 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 68Z27E7S2D;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -146,14 +263,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		32DA5C36666357441B14CE70 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-jah v2/Pods-jah v2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B07E855DA146C07C48700AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EAADF81292D715E61F7797EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-jah v2/Pods-jah v2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		48D2F6621DA887FA00224A03 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4823E17C1DB0504800C1BDEA /* profileBtnSegue.m in Sources */,
 				48D2F6711DA887FA00224A03 /* ViewController.m in Sources */,
 				48D2F66E1DA887FA00224A03 /* AppDelegate.m in Sources */,
 				48D2F66B1DA887FA00224A03 /* main.m in Sources */,
+				4874777D1DDB840100C16154 /* peopleBtnSegue.m in Sources */,
+				48480F601DE20F0F00887C56 /* firstTabScroll.m in Sources */,
+				48AF4F271DEE58A500263F06 /* Person.m in Sources */,
+				4823E1801DB3ED7F00C1BDEA /* CheckConnections.m in Sources */,
+				488054E61DBAAA99007B0C0D /* mainTabController.m in Sources */,
+				4823E18C1DB54E0600C1BDEA /* ViewControllerCustomSegue.m in Sources */,
+				4823E1891DB45A2400C1BDEA /* Reachability.m in Sources */,
+				480415551DF5E552002D6422 /* profileTabViewViewController.m in Sources */,
+				4823E16D1DAFF47400C1BDEA /* FirstTabView.m in Sources */,
+				48A8DE331E020B210067EC8A /* AsyncImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +373,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -244,6 +421,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -269,25 +447,48 @@
 		};
 		48D2F67E1DA887FA00224A03 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0901C6AED3924CDDE8D0831 /* Pods-jah v2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "jah v2/jah v2.entitlements";
 				DEVELOPMENT_TEAM = 68Z27E7S2D;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "jah v2/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "hanif.jah-v2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "jah v2/jah v2-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		48D2F67F1DA887FA00224A03 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D913EACE6B477EFC9F4E97D /* Pods-jah v2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "jah v2/jah v2.entitlements";
 				DEVELOPMENT_TEAM = 68Z27E7S2D;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "jah v2/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "hanif.jah-v2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "jah v2/jah v2-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -310,6 +511,7 @@
 				48D2F67F1DA887FA00224A03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

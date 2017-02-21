@@ -10,6 +10,8 @@
 
 @interface profileTabViewViewController ()
 
+@property (nonatomic) YIPopupTextView* popupTextView;
+
 @end
 
 @implementation profileTabViewViewController
@@ -19,10 +21,15 @@
 
 - (void)viewDidLoad {
     
+    //show status bar
+    shouldHideStatusBar = NO;
+    
     // Do any additional setup after loading the view.]
     Defaultprofilepic = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"profile pics"]];
-    profilePicHeader.layer.cornerRadius = profilePicHeader.frame.size.width/2;
-    profilePicHeader.clipsToBounds = YES;
+    
+    profilePicHeader.layer.cornerRadius = profilePicHeader.frame.size.height /2;
+    profilePicHeader.layer.masksToBounds = YES;
+    profilePicHeader.layer.borderWidth = 0;
     
     profilePicHeader.image = [UIImage imageNamed:@"profile pics"];
     
@@ -54,6 +61,10 @@
    // [settingScrollPage1 addSubview:settingScrollPage2];
     //[settingScrollPage1 addSubview:settingScrollPage3];
    
+    scrollView.contentSize=CGSizeMake(SCROLLWIDTH*3, scrollView.frame.size.height);
+    scrollView.delegate = self;
+    scrollView.pagingEnabled = YES;
+    
     for (int i =0; i<3; i++)
     {
         UIScrollView *imageView = [[UIScrollView alloc]initWithFrame:CGRectMake(SCROLLWIDTH*i, 0, scrollView.frame.size.width, scrollView.frame.size.height)];
@@ -78,7 +89,6 @@
     }
     
     
-    
     [super viewDidLoad];
     
 }
@@ -87,7 +97,8 @@
     [super viewDidAppear:animated];
     //userImg1.image = [UIImage imageWithContentsOfFile:self.assets[0]];
    // NSLog(@"assets 0 is: %@",self.assets[0]);
-    [imageSelectorScroll setContentSize:CGSizeMake(770, imageSelectorScroll.frame.size.height)];
+    [imageSelectorScroll setContentSize:CGSizeMake(590, imageSelectorScroll.frame.size.height)];
+    [settingScrollPage1 setContentSize:CGSizeMake(settingScrollPage1.frame.size.width, settingScrollPage1.frame.size.height+200)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -307,6 +318,67 @@
 }
 
 
+//IBAction for edit button presses to alter bio
+
+- (BOOL)prefersStatusBarHidden
+{
+    //    return !!_popupTextView;
+    return shouldHideStatusBar;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    if (_popupTextView) {
+        return UIStatusBarStyleLightContent;    // white text
+    }
+    else {
+        return UIStatusBarStyleDefault;         // black text
+    }
+}
+-(IBAction)bioBtnPress:(id)sender{
+    shouldHideStatusBar = YES;
+    [self setNeedsStatusBarAppearanceUpdate];
+    YIPopupTextView* popupTextView =
+    [[YIPopupTextView alloc] initWithPlaceHolder:@"input here" maxCount:300 buttonStyle:YIPopupTextViewButtonStyleRightDone];
+    popupTextView.delegate = self;
+    popupTextView.caretShiftGestureEnabled = YES;   // default = NO
+    //popupTextView.text = self.textView.text;
+    popupTextView.editable = YES;                  // set editable=NO to show without keyboard
+    [popupTextView showInViewController:self]; // recommended, especially for iOS7
+    //typedef NS_ENUM(NSInteger, YIPopupTextViewButtonStyle) {
+        //YIPopupTextViewButtonStyleNone,
+        //YIPopupTextViewButtonStyleRightCancel,          // "x" on the upper-right
+        //YIPopupTextViewButtonStyleRightDone,            // "check" on the upper-right
+        //YIPopupTextViewButtonStyleLeftCancelRightDone,
+        //YIPopupTextViewButtonStyleRightCancelAndDone,
+        //YIPopupTextViewButtonStyleLeftDone
+   // };
+///to add custom button just create ui button and place it in popupTextview i.e uibutton doneButton [popupTextView.superview addSubView:doneButton]
+    //
+    // NOTE:
+    // You can add your custom-button after calling -showInView:
+    // (it's better to add on either superview or superview.superview)
+    // https://github.com/inamiy/YIPopupTextView/issues/3
+    //
+    // [popupTextView.superview addSubview:customButton];
+
+    _popupTextView = popupTextView;
+
+}
+
+- (void)popupTextView:(YIPopupTextView *)textView willDismissWithText:(NSString *)text cancelled:(BOOL)cancelled
+{
+    NSLog(@"will dismiss: cancelled=%d",cancelled);
+    //self.textView.text = text;
+    shouldHideStatusBar = NO;
+    [self setNeedsStatusBarAppearanceUpdate];
+    NSLog(@"fnished");
+    _popupTextView = nil;
+    
+    BioTextLbl.text = text;
+}
+
+
 /////////////// image picker methods end //////////////////////////////////
 /*
 #pragma mark - Navigation
@@ -317,5 +389,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
 
 @end

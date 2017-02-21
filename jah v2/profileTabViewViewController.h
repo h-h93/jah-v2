@@ -9,14 +9,18 @@
 #import <UIKit/UIKit.h>
 #import <Masonry.h>
 #import <MARKRangeSlider.h>
+#import "YIPopupTextView.h"
 
-@interface profileTabViewViewController : UIViewController<UIImagePickerControllerDelegate>{
+@interface profileTabViewViewController : UIViewController<UIImagePickerControllerDelegate, YIPopupTextViewDelegate>{
     
+    //scrollview pages for settings and page control
     IBOutlet UIScrollView *settingScrollPage1;
     IBOutlet UIScrollView *settingScrollPage3;
     IBOutlet UIScrollView *settingScrollPage2;
     IBOutlet UIPageControl *pageControl;
     IBOutlet UIScrollView *scrollView;
+    
+    //image picker scrollview
     IBOutlet UIScrollView *imageSelectorScroll;
     // 5 user profile images
     IBOutlet UIImageView *userImg1;
@@ -31,14 +35,29 @@
     NSData *imgData3;
     NSData *imgData4;
     NSData *imgData5;
+    
+    //top profile pic image
     IBOutlet UIImageView *profilePicHeader;
+    
+    //setting sliders
     IBOutlet UISlider *heightSlider;
 
     //keep track of which image activated touch gesture
     long tag;
     UIImagePickerController *ipc;
+    
+    //setting edit buttons
+    IBOutlet UIButton *bioBtn;
+    
+    //bio text label
+    IBOutlet UILabel *BioTextLbl;
+    
+    //hide or show status bar
+    BOOL shouldHideStatusBar;
 }
 
 -(IBAction)changePage:(id)sender;
+
+-(IBAction)bioBtnPress:(id)sender;
 
 @end

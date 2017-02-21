@@ -34,7 +34,7 @@
 /* Begin PBXFileReference section */
 		1D913EACE6B477EFC9F4E97D /* Pods-jah v2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jah v2.release.xcconfig"; path = "Pods/Target Support Files/Pods-jah v2/Pods-jah v2.release.xcconfig"; sourceTree = "<group>"; };
 		480415531DF5E552002D6422 /* profileTabViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = profileTabViewViewController.h; sourceTree = "<group>"; };
-		480415541DF5E552002D6422 /* profileTabViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = profileTabViewViewController.m; sourceTree = "<group>"; };
+		480415541DF5E552002D6422 /* profileTabViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = profileTabViewViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		480415561DFCCA60002D6422 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4823E16B1DAFF47400C1BDEA /* FirstTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstTabView.h; sourceTree = "<group>"; };
 		4823E16C1DAFF47400C1BDEA /* FirstTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstTabView.m; sourceTree = "<group>"; };

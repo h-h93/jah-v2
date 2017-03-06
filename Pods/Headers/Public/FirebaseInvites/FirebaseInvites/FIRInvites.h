@@ -1,1 +1,1 @@
-../../../../FirebaseInvites/Frameworks/frameworks/FirebaseInvites.framework/Headers/FIRInvites.h
+../../../../FirebaseInvites/Frameworks/FirebaseInvites.framework/Headers/FIRInvites.h

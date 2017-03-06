@@ -51,8 +51,13 @@ static NSString * const kMARKRangeSliderTrackRangeImage = @"rangeSliderTrackRang
 }
 
 - (void)setLeftValue:(CGFloat)leftValue rightValue:(CGFloat)rightValue {
-    self.rightValue = rightValue;
-    self.leftValue = leftValue;
+    if (leftValue == 0 && rightValue == 0) {
+        self.leftValue = leftValue;
+        self.rightValue = rightValue;
+    } else {
+        self.rightValue = rightValue;
+        self.leftValue = leftValue;
+    }
 }
 
 #pragma mark - Configuration
@@ -159,6 +164,12 @@ static NSString * const kMARKRangeSliderTrackRangeImage = @"rangeSliderTrackRang
         rangeWidth += rightInset + gap;
     }
     self.rangeImageView.frame = CGRectMake(leftX + leftInset, trackY, rangeWidth, trackHeight);
+
+    // Set thumb image view frame sizes
+    CGRect leftImageViewFrame = { CGPointMake(0, 0), leftThumbImageSize };
+    CGRect rightImageViewFrame = { CGPointMake(0, 0), rightThumbImageSize };
+    self.leftThumbImageView.frame = leftImageViewFrame;
+    self.rightThumbImageView.frame = rightImageViewFrame;
 
     // Set left & right thumb frames
     leftX += leftInset;

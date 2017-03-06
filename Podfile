@@ -27,4 +27,5 @@ pod ‘SwipeView’
 pod 'Masonry'
 pod 'YIPopupTextView'
 pod 'MARKRangeSlider'
+pod 'ActionSheetPicker-3.0', '~> 2.2.0'
 end

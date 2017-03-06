@@ -1,6 +1,6 @@
 //
 //  profileTabViewViewController.m
-//  
+//
 //
 //  Created by Hanif Hussain on 05/12/2016.
 //
@@ -56,11 +56,11 @@
     userImg5.tag = 5;
     
     userImg5.image = [UIImage imageNamed:@"profile pics"];
-
+    
     //[scrollView addSubview:settingScrollPage1];
-   // [settingScrollPage1 addSubview:settingScrollPage2];
+    // [settingScrollPage1 addSubview:settingScrollPage2];
     //[settingScrollPage1 addSubview:settingScrollPage3];
-   
+    
     scrollView.contentSize=CGSizeMake(SCROLLWIDTH*3, scrollView.frame.size.height);
     scrollView.delegate = self;
     scrollView.pagingEnabled = YES;
@@ -68,7 +68,7 @@
     for (int i =0; i<3; i++)
     {
         UIScrollView *imageView = [[UIScrollView alloc]initWithFrame:CGRectMake(SCROLLWIDTH*i, 0, scrollView.frame.size.width, scrollView.frame.size.height)];
-
+        
         if (i==0)
         {
             imageView = settingScrollPage1;
@@ -89,14 +89,23 @@
     }
     
     
+    
     [super viewDidLoad];
+    
+    //setup and initialise our picker view for ethnicity popup display
+    ethnicity = @[@"White", @"Black", @"Asian", @"Latin"];
+    
+    //setup and initialise our picker view for education popup display
+    education = @[@"Primary school", @"Secondary school", @"College", @"Undergraduate", @"Masters/Phd"];
+   
+
     
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     //userImg1.image = [UIImage imageWithContentsOfFile:self.assets[0]];
-   // NSLog(@"assets 0 is: %@",self.assets[0]);
+    // NSLog(@"assets 0 is: %@",self.assets[0]);
     [imageSelectorScroll setContentSize:CGSizeMake(590, imageSelectorScroll.frame.size.height)];
     [settingScrollPage1 setContentSize:CGSizeMake(settingScrollPage1.frame.size.width, settingScrollPage1.frame.size.height+200)];
 }
@@ -130,9 +139,9 @@
     }else if(sender.view.tag == 5){
         tag = 5;
     }
-   
-
-   [self presentViewController:ipc animated:YES completion:nil];
+    
+    
+    [self presentViewController:ipc animated:YES completion:nil];
     
 }
 
@@ -140,45 +149,45 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-        [picker dismissViewControllerAnimated:YES completion:nil];
-
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
     //[self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
     /*
-    NSData *imageData = [[NSData alloc] initWithData:UIImageJPEGRepresentation(([info objectForKey:UIImagePickerControllerOriginalImage]), 1.0)];
-    int imageSize = imageData.length;
-    NSLog(@"SIZE OF IMAGE: %i ", imageSize);
-    */
-        if(tag == 1){
-            userImg1.image = [self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
-        }else if(tag == 2){
-            userImg2.image = [self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
-            [self checkAndSetPics];
-        }else if(tag == 3){
-            userImg3.image = [self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
-            [self checkAndSetPics];
-        }else if(tag == 4){
-            userImg4.image = [self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
-            [self checkAndSetPics];
-        }else if(tag == 5){
-            userImg5.image = [self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
-            [self checkAndSetPics];
-        }
-
-
-   // UIImageView *temp = self.checkAndSetPics;
-    /*
+     NSData *imageData = [[NSData alloc] initWithData:UIImageJPEGRepresentation(([info objectForKey:UIImagePickerControllerOriginalImage]), 1.0)];
+     int imageSize = imageData.length;
+     NSLog(@"SIZE OF IMAGE: %i ", imageSize);
+     */
     if(tag == 1){
-    userImg1.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        userImg1.image = [self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
     }else if(tag == 2){
-        userImg2.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        userImg2.image = [self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
+        [self checkAndSetPics];
     }else if(tag == 3){
-        userImg3.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        userImg3.image = [self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
+        [self checkAndSetPics];
     }else if(tag == 4){
-        userImg4.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        userImg4.image = [self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
+        [self checkAndSetPics];
     }else if(tag == 5){
-        userImg5.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        userImg5.image = [self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
+        [self checkAndSetPics];
     }
-    */
+    
+    
+    // UIImageView *temp = self.checkAndSetPics;
+    /*
+     if(tag == 1){
+     userImg1.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+     }else if(tag == 2){
+     userImg2.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+     }else if(tag == 3){
+     userImg3.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+     }else if(tag == 4){
+     userImg4.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+     }else if(tag == 5){
+     userImg5.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+     }
+     */
     //[self checkAndSetPics:tag].image = [info objectForKey:UIImagePickerControllerOriginalImage];
 }
 
@@ -276,31 +285,30 @@
     return [UIImage imageWithData:imageData];
 }
 /*
-//scrolling ends
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    // Test the offset and calculate the current page after scrolling ends
-
-    //find the page number you are on
-    CGFloat pageWidth = scrollView.frame.size.width;
-    int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-     NSLog(@"Scrolling - You are now on page %i",page);
-}
-
-//dragging ends, please switch off paging to listen for this event
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *) targetContentOffset NS_AVAILABLE_IOS(5_0){
-    //find the page number you are on
-    CGFloat pageWidth = scrollView.frame.size.width;
-    int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-    NSLog(@"Dragging - You are now on page %i",page);
-
-}
-*/
+ //scrolling ends
+ - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+ // Test the offset and calculate the current page after scrolling ends
+ 
+ //find the page number you are on
+ CGFloat pageWidth = scrollView.frame.size.width;
+ int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+ NSLog(@"Scrolling - You are now on page %i",page);
+ }
+ 
+ //dragging ends, please switch off paging to listen for this event
+ - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *) targetContentOffset NS_AVAILABLE_IOS(5_0){
+ //find the page number you are on
+ CGFloat pageWidth = scrollView.frame.size.width;
+ int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+ NSLog(@"Dragging - You are now on page %i",page);
+ 
+ }
+ */
 
 #pragma mark changePage
 
--(IBAction)changePage:(id)sender
-{
-     [scrollView scrollRectToVisible:CGRectMake(SCROLLWIDTH*pageControl.currentPage, scrollView.frame.origin.y, SCROLLWIDTH, scrollView.frame.size.height) animated:YES];
+- (IBAction)changePage:(id)sender{
+    [scrollView scrollRectToVisible:CGRectMake(SCROLLWIDTH*pageControl.currentPage, scrollView.frame.origin.y, SCROLLWIDTH, scrollView.frame.size.height) animated:YES];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)sender {
@@ -309,8 +317,7 @@
     
 }
 
--(void)setIndiactorForCurrentPage
-{
+- (void)setIndiactorForCurrentPage{
     uint page = scrollView.contentOffset.x / SCROLLWIDTH;
     [pageControl setCurrentPage:page];
     NSLog(@"current page is: %u", page);
@@ -320,14 +327,12 @@
 
 //IBAction for edit button presses to alter bio
 
-- (BOOL)prefersStatusBarHidden
-{
+- (BOOL)prefersStatusBarHidden{
     //    return !!_popupTextView;
     return shouldHideStatusBar;
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
+- (UIStatusBarStyle)preferredStatusBarStyle{
     if (_popupTextView) {
         return UIStatusBarStyleLightContent;    // white text
     }
@@ -335,7 +340,10 @@
         return UIStatusBarStyleDefault;         // black text
     }
 }
--(IBAction)bioBtnPress:(id)sender{
+
+/////////////////////////////// Enter Biography button action method starts ///////////////////////////////
+
+- (IBAction)bioBtnPress:(id)sender{
     shouldHideStatusBar = YES;
     [self setNeedsStatusBarAppearanceUpdate];
     YIPopupTextView* popupTextView =
@@ -343,17 +351,13 @@
     popupTextView.delegate = self;
     popupTextView.caretShiftGestureEnabled = YES;   // default = NO
     //popupTextView.text = self.textView.text;
+    if([[BioTextLbl text] length] > 0){
+        popupTextView.text = BioTextLbl.text;
+    }
     popupTextView.editable = YES;                  // set editable=NO to show without keyboard
     [popupTextView showInViewController:self]; // recommended, especially for iOS7
-    //typedef NS_ENUM(NSInteger, YIPopupTextViewButtonStyle) {
-        //YIPopupTextViewButtonStyleNone,
-        //YIPopupTextViewButtonStyleRightCancel,          // "x" on the upper-right
-        //YIPopupTextViewButtonStyleRightDone,            // "check" on the upper-right
-        //YIPopupTextViewButtonStyleLeftCancelRightDone,
-        //YIPopupTextViewButtonStyleRightCancelAndDone,
-        //YIPopupTextViewButtonStyleLeftDone
-   // };
-///to add custom button just create ui button and place it in popupTextview i.e uibutton doneButton [popupTextView.superview addSubView:doneButton]
+    
+    //to add custom button just create ui button and place it in popupTextview i.e uibutton doneButton [popupTextView.superview addSubView:doneButton]
     //
     // NOTE:
     // You can add your custom-button after calling -showInView:
@@ -361,13 +365,12 @@
     // https://github.com/inamiy/YIPopupTextView/issues/3
     //
     // [popupTextView.superview addSubview:customButton];
-
+    
     _popupTextView = popupTextView;
-
+    
 }
 
-- (void)popupTextView:(YIPopupTextView *)textView willDismissWithText:(NSString *)text cancelled:(BOOL)cancelled
-{
+- (void)popupTextView:(YIPopupTextView *)textView willDismissWithText:(NSString *)text cancelled:(BOOL)cancelled{
     NSLog(@"will dismiss: cancelled=%d",cancelled);
     //self.textView.text = text;
     shouldHideStatusBar = NO;
@@ -378,17 +381,52 @@
     BioTextLbl.text = text;
 }
 
+/////////////////////////////// Enter Biography button action ends//////////////////////
 
-/////////////// image picker methods end //////////////////////////////////
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+/////////////////////// Ethnicity and Education button controll picker begins ///////////////////////////////////
+
+- (IBAction)ethnicityBtnPress:(id)sender{
+    [ActionSheetStringPicker showPickerWithTitle:@"Select ethnicity"
+                                            rows:ethnicity
+                                initialSelection:0
+                                       doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+                                           NSLog(@"Picker: %@, Index: %ld, value: %@",
+                                                 picker, selectedIndex, selectedValue);
+                                           ethnicityLbl.text = selectedValue; // set ethnicity label text to represent chosen ethnicity from picker
+                                       }
+                                     cancelBlock:^(ActionSheetStringPicker *picker) {
+                                         NSLog(@"Block Picker Canceled");
+                                     }
+                                          origin:sender];
+    // You can also use self.view if you don't have a sender
 }
-*/
+
+- (IBAction)educationBtnPress:(id)sender {
+    [ActionSheetStringPicker showPickerWithTitle:@"Select highest education"
+                                            rows:education
+                                initialSelection:0
+                                       doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+                                           NSLog(@"Picker: %@, Index: %ld, value: %@",
+                                                 picker, selectedIndex, selectedValue);
+                                           educationLbl.text = selectedValue; // set education label text to represent chosen education from picker
+                                       }
+                                     cancelBlock:^(ActionSheetStringPicker *picker) {
+                                         NSLog(@"Block Picker Canceled");
+                                     }
+                                          origin:sender];
+}
+
+//////////////////////// Ethnicity and biography controll picker methods end //////////////////////////////////////////
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 
 

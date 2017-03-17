@@ -619,12 +619,15 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="40" minValue="40" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="pay-ri-Wce">
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="40" minValue="40" maxValue="250" translatesAutoresizingMaskIntoConstraints="NO" id="pay-ri-Wce">
                                                 <rect key="frame" x="27" y="30" width="320" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="minimumTrackTintColor" red="1" green="0.32167954119999997" blue="0.3261868953" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="maximumTrackTintColor" red="1" green="0.54960358519999997" blue="0.52242702860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="thumbTintColor" red="1" green="0.32167954119999997" blue="0.3261868953" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="setHeight:" destination="dmZ-4B-VfC" eventType="valueChanged" id="I9x-fA-VOj"/>
+                                                </connections>
                                             </slider>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ijg-qg-QyM">
                                                 <rect key="frame" x="353" y="35" width="50" height="21"/>
@@ -653,6 +656,9 @@
                                                 <color key="minimumTrackTintColor" red="1" green="0.32167954119999997" blue="0.3261868953" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="maximumTrackTintColor" red="1" green="0.54960358519999997" blue="0.52242702860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="thumbTintColor" red="1" green="0.32167954119999997" blue="0.3261868953" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="setWeight:" destination="dmZ-4B-VfC" eventType="valueChanged" id="BYN-gu-7RN"/>
+                                                </connections>
                                             </slider>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIr-ai-SOy">
                                                 <rect key="frame" x="353" y="35" width="50" height="21"/>

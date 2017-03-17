@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Masonry.h>
-#import <MARKRangeSlider.h>
+#import "Masonry.h"
+#import "MARKRangeSlider.h"
 #import "YIPopupTextView.h"
 #import "ActionSheetPicker.h"
 
@@ -84,6 +84,8 @@
 
 - (IBAction)educationBtnPress:(id)sender;
 
+- (IBAction)setHeight:(id)sender;
 
+- (IBAction)setWeight:(id)sender;
 
 @end

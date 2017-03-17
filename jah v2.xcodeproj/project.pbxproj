@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		341BEC018E6C50C4E9839EAE /* libPods-jah v2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 906DC3FBCB067334F6D74205 /* libPods-jah v2.a */; };
 		480415551DF5E552002D6422 /* profileTabViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 480415541DF5E552002D6422 /* profileTabViewViewController.m */; };
 		480415571DFCCA60002D6422 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 480415561DFCCA60002D6422 /* AudioToolbox.framework */; };
 		4823E16D1DAFF47400C1BDEA /* FirstTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4823E16C1DAFF47400C1BDEA /* FirstTabView.m */; };
@@ -29,6 +28,7 @@
 		48D2F6741DA887FA00224A03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D2F6721DA887FA00224A03 /* Main.storyboard */; };
 		48D2F6761DA887FA00224A03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48D2F6751DA887FA00224A03 /* Assets.xcassets */; };
 		48D2F6791DA887FA00224A03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D2F6771DA887FA00224A03 /* LaunchScreen.storyboard */; };
+		D9147A1F872E1FA060446C8A /* Pods_jah_v2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6CD834FF76A72E432309573 /* Pods_jah_v2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,8 +71,8 @@
 		48D2F6781DA887FA00224A03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48D2F67A1DA887FA00224A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48D2F6801DA8880900224A03 /* jah v2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "jah v2.entitlements"; sourceTree = "<group>"; };
-		906DC3FBCB067334F6D74205 /* libPods-jah v2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-jah v2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0901C6AED3924CDDE8D0831 /* Pods-jah v2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jah v2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jah v2/Pods-jah v2.debug.xcconfig"; sourceTree = "<group>"; };
+		B6CD834FF76A72E432309573 /* Pods_jah_v2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jah_v2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +84,7 @@
 				4823E18E1DB572A100C1BDEA /* AVKit.framework in Frameworks */,
 				480415571DFCCA60002D6422 /* AudioToolbox.framework in Frameworks */,
 				4823E1831DB3F34A00C1BDEA /* SystemConfiguration.framework in Frameworks */,
-				341BEC018E6C50C4E9839EAE /* libPods-jah v2.a in Frameworks */,
+				D9147A1F872E1FA060446C8A /* Pods_jah_v2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +173,7 @@
 				4823E18F1DB66E9B00C1BDEA /* CoreLocation.framework */,
 				4823E18D1DB572A100C1BDEA /* AVKit.framework */,
 				4823E1821DB3F34A00C1BDEA /* SystemConfiguration.framework */,
-				906DC3FBCB067334F6D74205 /* libPods-jah v2.a */,
+				B6CD834FF76A72E432309573 /* Pods_jah_v2.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

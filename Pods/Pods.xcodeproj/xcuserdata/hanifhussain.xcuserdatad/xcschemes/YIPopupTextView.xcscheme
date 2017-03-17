@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '348B75BC4E9A545F6FD54B56A7880FD7'
+               BlueprintIdentifier = '9089792B275E000A0152E156AC5B335B'
                BlueprintName = 'YIPopupTextView'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libYIPopupTextView.a'>
+               BuildableName = 'YIPopupTextView.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

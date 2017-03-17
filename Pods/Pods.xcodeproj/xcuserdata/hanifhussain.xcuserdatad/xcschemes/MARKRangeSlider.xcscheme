@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A1E756A78A1C9269B46410B381FA2653'
+               BlueprintIdentifier = 'A6875D81C24E0C237DA91D93EDFD7454'
                BlueprintName = 'MARKRangeSlider'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libMARKRangeSlider.a'>
+               BuildableName = 'MARKRangeSlider.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

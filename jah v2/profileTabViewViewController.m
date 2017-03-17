@@ -7,6 +7,7 @@
 //
 
 #import "profileTabViewViewController.h"
+#import "SDWebImage/UIImageView+WebCache.h"
 
 @interface profileTabViewViewController ()
 
@@ -16,6 +17,7 @@
 
 @implementation profileTabViewViewController
 
+
 #define SCROLLWIDTH 414
 #define MAS_SHORTHAND
 
@@ -23,10 +25,8 @@
     
     //show status bar
     shouldHideStatusBar = NO;
-    
     // Do any additional setup after loading the view.]
     Defaultprofilepic = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"profile pics"]];
-    
     profilePicHeader.layer.cornerRadius = profilePicHeader.frame.size.height /2;
     profilePicHeader.layer.masksToBounds = YES;
     profilePicHeader.layer.borderWidth = 0;
@@ -415,6 +415,21 @@
                                          NSLog(@"Block Picker Canceled");
                                      }
                                           origin:sender];
+}
+
+
+//set height and weight
+- (IBAction)setHeight:(id)sender {
+    heightLbl.text = [NSString stringWithFormat:@"%.2f", heightSlider.value];
+    NSLog(@"height label val is %@",heightLbl.text);
+}
+
+- (IBAction)setWeight:(id)sender {
+}
+
+//send the settings to the database to update user settings send it after user performs setting changes i.e at the end of set height IBAction event
+- (void)updateSettingsFirebase:(float)height :(float)weight :(NSString*)bio :(NSString *)education{
+    
 }
 
 //////////////////////// Ethnicity and biography controll picker methods end //////////////////////////////////////////

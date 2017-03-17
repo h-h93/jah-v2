@@ -3,7 +3,7 @@
 
 target 'jah v2' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
+   use_frameworks!
 
   # Pods for jah v2
 pod "MDCSwipeToChoose”
@@ -28,4 +28,5 @@ pod 'Masonry'
 pod 'YIPopupTextView'
 pod 'MARKRangeSlider'
 pod 'ActionSheetPicker-3.0', '~> 2.2.0'
+pod 'SDWebImage', '~>3.8'
 end

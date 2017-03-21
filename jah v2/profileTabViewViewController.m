@@ -22,7 +22,7 @@
 #define MAS_SHORTHAND
 
 - (void)viewDidLoad {
-    
+    [super viewDidLoad];
     //show status bar
     shouldHideStatusBar = NO;
     // Do any additional setup after loading the view.]
@@ -61,36 +61,43 @@
     // [settingScrollPage1 addSubview:settingScrollPage2];
     //[settingScrollPage1 addSubview:settingScrollPage3];
     
+    
     scrollView.contentSize=CGSizeMake(SCROLLWIDTH*3, scrollView.frame.size.height);
     scrollView.delegate = self;
     scrollView.pagingEnabled = YES;
+    [scrollView setScrollEnabled:YES];
+    [settingScrollPage1 setScrollEnabled:YES];
+    [currentScrollView setScrollEnabled:YES];
+    [scrollView setShowsVerticalScrollIndicator:YES];
+    //[settingScrollPage1 addSubview:imageSelectorScroll];
+    //[settingScrollPage1 removeFromSuperview];
     
     for (int i =0; i<3; i++)
     {
-        UIScrollView *imageView = [[UIScrollView alloc]initWithFrame:CGRectMake(SCROLLWIDTH*i, 0, scrollView.frame.size.width, scrollView.frame.size.height)];
+        currentScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(SCROLLWIDTH*i, 0, scrollView.frame.size.width, scrollView.frame.size.height)];
+        [currentScrollView setBounces:NO];
         
         if (i==0)
         {
-            imageView = settingScrollPage1;
+            currentScrollView = settingScrollPage1;
             
         }
         else if (i==1)
         {
             
-            imageView = settingScrollPage2;
-            
+            currentScrollView = settingScrollPage2;
         }
         else
         {
-            imageView.backgroundColor = [UIColor yellowColor];
+            currentScrollView.backgroundColor = [UIColor yellowColor];
         }
-        [scrollView addSubview:imageView];
+        [scrollView addSubview:currentScrollView];
+        [self.view addSubview:scrollView];
         
     }
     
+
     
-    
-    [super viewDidLoad];
     
     //setup and initialise our picker view for ethnicity popup display
     ethnicity = @[@"White", @"Black", @"Asian", @"Latin"];
@@ -104,10 +111,20 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    [self.view setNeedsLayout];
     //userImg1.image = [UIImage imageWithContentsOfFile:self.assets[0]];
     // NSLog(@"assets 0 is: %@",self.assets[0]);
+    
+}
+
+- (void)viewDidLayoutSubviews{
     [imageSelectorScroll setContentSize:CGSizeMake(590, imageSelectorScroll.frame.size.height)];
     [settingScrollPage1 setContentSize:CGSizeMake(settingScrollPage1.frame.size.width, settingScrollPage1.frame.size.height+200)];
+    
+    
+    
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -295,7 +312,7 @@
  NSLog(@"Scrolling - You are now on page %i",page);
  }
  
- //dragging ends, please switch off paging to listen for this event
+dragging ends, please switch off paging to listen for this event
  - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *) targetContentOffset NS_AVAILABLE_IOS(5_0){
  //find the page number you are on
  CGFloat pageWidth = scrollView.frame.size.width;
@@ -306,13 +323,17 @@
  */
 
 #pragma mark changePage
+#pragma mark - UIScrollViewDelegate
 
 - (IBAction)changePage:(id)sender{
     [scrollView scrollRectToVisible:CGRectMake(SCROLLWIDTH*pageControl.currentPage, scrollView.frame.origin.y, SCROLLWIDTH, scrollView.frame.size.height) animated:YES];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)sender {
-    
+    /*if(self.lastContentOffset > scrollView.contentOffset.y || self.lastContentOffset < scrollView.contentOffset.y){
+         [imageSelectorScroll setScrollEnabled:NO];
+    }
+    self.lastContentOffset = scrollView.contentOffset.y;*/
     [self setIndiactorForCurrentPage];
     
 }
@@ -341,7 +362,7 @@
     }
 }
 
-/////////////////////////////// Enter Biography button action method starts ///////////////////////////////
+/////////////////////////////// Biography button action method starts ///////////////////////////////
 
 - (IBAction)bioBtnPress:(id)sender{
     shouldHideStatusBar = YES;
@@ -381,7 +402,7 @@
     BioTextLbl.text = text;
 }
 
-/////////////////////////////// Enter Biography button action ends//////////////////////
+/////////////////////////////// Biography button action ends//////////////////////
 
 
 /////////////////////// Ethnicity and Education button controll picker begins ///////////////////////////////////
@@ -420,17 +441,21 @@
 
 //set height and weight
 - (IBAction)setHeight:(id)sender {
-    heightLbl.text = [NSString stringWithFormat:@"%.2f", heightSlider.value];
+    heightLbl.text = [NSString stringWithFormat:@"%.2f cm", heightSlider.value];
     NSLog(@"height label val is %@",heightLbl.text);
 }
 
 - (IBAction)setWeight:(id)sender {
+    weightLbl.text = [NSString stringWithFormat:@"%.2f kg", weightSlider.value];
+    NSLog(@"weight label val is %@",weightLbl.text);
 }
 
 //send the settings to the database to update user settings send it after user performs setting changes i.e at the end of set height IBAction event
 - (void)updateSettingsFirebase:(float)height :(float)weight :(NSString*)bio :(NSString *)education{
     
 }
+
+
 
 //////////////////////// Ethnicity and biography controll picker methods end //////////////////////////////////////////
 /*

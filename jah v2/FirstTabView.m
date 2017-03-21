@@ -78,8 +78,7 @@
 }
 
 
-- (void)viewDidLayoutSubviews
-{
+- (void)viewDidLayoutSubviews{
     [scrollView setContentSize:CGSizeMake(320, self.view.frame.size.height* 1.5)];
     
     [innerScrollView setContentSize:CGSizeMake(320, self.view.frame.size.height)];

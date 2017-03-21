@@ -12,7 +12,7 @@
 #import "YIPopupTextView.h"
 #import "ActionSheetPicker.h"
 
-@interface profileTabViewViewController : UIViewController<UIImagePickerControllerDelegate, YIPopupTextViewDelegate>{
+@interface profileTabViewViewController : UIViewController<UIImagePickerControllerDelegate, YIPopupTextViewDelegate, UIScrollViewDelegate>{
     
     //scrollview pages for settings and page control
     IBOutlet UIScrollView *settingScrollPage1;
@@ -20,6 +20,7 @@
     IBOutlet UIScrollView *settingScrollPage2;
     IBOutlet UIPageControl *pageControl;
     IBOutlet UIScrollView *scrollView;
+    UIScrollView *currentScrollView;
     
     //image picker scrollview
     IBOutlet UIScrollView *imageSelectorScroll;
@@ -87,5 +88,7 @@
 - (IBAction)setHeight:(id)sender;
 
 - (IBAction)setWeight:(id)sender;
+
+@property(nonatomic)CGFloat lastContentOffset;
 
 @end

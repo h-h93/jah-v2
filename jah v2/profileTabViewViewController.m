@@ -121,10 +121,6 @@
     [imageSelectorScroll setContentSize:CGSizeMake(590, imageSelectorScroll.frame.size.height)];
     [settingScrollPage1 setContentSize:CGSizeMake(settingScrollPage1.frame.size.width, settingScrollPage1.frame.size.height+200)];
     
-    
-    
-    
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -300,6 +296,11 @@
     //int imageSize = imageData.length;
     //NSLog(@"SIZE OF IMAGE: %i ", imageSize);
     return [UIImage imageWithData:imageData];
+}
+
+-(IBAction)removeImage:(id)sender{
+   //remove image button press method, need to check which image was removed and shuffle them around
+    
 }
 /*
  //scrolling ends

@@ -75,6 +75,16 @@
     IBOutlet UISlider *weightSlider;
     IBOutlet UILabel *weightLbl;
     
+    //Remove user picture buttons
+    IBOutlet UIButton *deleteImg1Btn;
+    IBOutlet UIButton *deleteImg2Btn;
+    IBOutlet UIButton *deleteImg3Btn;
+    IBOutlet UIButton *deleteImg4Btn;
+    IBOutlet UIButton *deleteImg5Btn;
+    
+    //keep track of which button activated delete image action
+    long deleteBtnTag;
+    
 }
 
 - (IBAction)changePage:(id)sender;
@@ -88,6 +98,8 @@
 - (IBAction)setHeight:(id)sender;
 
 - (IBAction)setWeight:(id)sender;
+
+- (IBAction)deleteImage:(id)sender;
 
 @property(nonatomic)CGFloat lastContentOffset;
 

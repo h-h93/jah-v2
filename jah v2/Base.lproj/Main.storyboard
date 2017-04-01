@@ -480,78 +480,6 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOR-0L-F4J">
                                 <rect key="frame" x="0.0" y="192" width="414" height="548"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gl9-24-7Of">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="132"/>
-                                        <subviews>
-                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile pics" translatesAutoresizingMaskIntoConstraints="NO" id="WaK-kd-7Hz">
-                                                <rect key="frame" x="8" y="9" width="100" height="109"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="qXA-JM-5g3"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile pics" translatesAutoresizingMaskIntoConstraints="NO" id="q35-03-dSE">
-                                                <rect key="frame" x="116" y="9" width="100" height="109"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="Vkb-ka-8Oj"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile pics" translatesAutoresizingMaskIntoConstraints="NO" id="kyp-hv-DEl">
-                                                <rect key="frame" x="224" y="9" width="100" height="109"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="Nzb-FH-exX"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile pics" translatesAutoresizingMaskIntoConstraints="NO" id="kPH-RI-Bol">
-                                                <rect key="frame" x="332" y="8" width="100" height="109"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="slp-nx-ESf"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile pics" translatesAutoresizingMaskIntoConstraints="NO" id="b4z-tP-S4j">
-                                                <rect key="frame" x="440" y="9" width="100" height="109"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="Yit-Jc-a3b"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMG-4k-tf9">
-                                                <rect key="frame" x="90" y="8" width="16" height="22"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="ic_remove_black_16.png"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="b4z-tP-S4j" secondAttribute="trailing" constant="-126" id="5LW-zT-Od2"/>
-                                            <constraint firstAttribute="width" constant="414" id="5Oj-vF-uig"/>
-                                            <constraint firstItem="b4z-tP-S4j" firstAttribute="leading" secondItem="kPH-RI-Bol" secondAttribute="trailing" constant="8" symbolic="YES" id="9x0-7z-RR2"/>
-                                            <constraint firstItem="kyp-hv-DEl" firstAttribute="top" secondItem="b4z-tP-S4j" secondAttribute="top" id="LR4-2b-Wpa"/>
-                                            <constraint firstItem="WaK-kd-7Hz" firstAttribute="bottom" secondItem="q35-03-dSE" secondAttribute="bottom" id="NHb-Pw-4Te"/>
-                                            <constraint firstItem="kPH-RI-Bol" firstAttribute="top" secondItem="Gl9-24-7Of" secondAttribute="topMargin" id="Pi5-iH-HVL"/>
-                                            <constraint firstItem="kyp-hv-DEl" firstAttribute="bottom" secondItem="b4z-tP-S4j" secondAttribute="bottom" id="VMO-6P-m86"/>
-                                            <constraint firstAttribute="bottom" secondItem="kPH-RI-Bol" secondAttribute="bottom" constant="15" id="Xi1-Ov-6RL"/>
-                                            <constraint firstItem="WaK-kd-7Hz" firstAttribute="top" secondItem="Gl9-24-7Of" secondAttribute="top" constant="9" id="ce9-sh-JLs"/>
-                                            <constraint firstItem="kyp-hv-DEl" firstAttribute="leading" secondItem="q35-03-dSE" secondAttribute="trailing" constant="8" symbolic="YES" id="gYl-9s-Tgb"/>
-                                            <constraint firstItem="WaK-kd-7Hz" firstAttribute="top" secondItem="q35-03-dSE" secondAttribute="top" id="hEN-Yv-duq"/>
-                                            <constraint firstItem="kPH-RI-Bol" firstAttribute="centerY" secondItem="Gl9-24-7Of" secondAttribute="centerY" constant="-3.5" id="i5l-7p-HN2"/>
-                                            <constraint firstItem="q35-03-dSE" firstAttribute="bottom" secondItem="kyp-hv-DEl" secondAttribute="bottom" id="jsW-xw-Ija"/>
-                                            <constraint firstItem="q35-03-dSE" firstAttribute="leading" secondItem="WaK-kd-7Hz" secondAttribute="trailing" constant="8" symbolic="YES" id="nWt-Am-qKk"/>
-                                            <constraint firstAttribute="bottom" secondItem="WaK-kd-7Hz" secondAttribute="bottom" constant="14" id="nsK-sS-IEr"/>
-                                            <constraint firstAttribute="height" constant="132" id="pz6-CD-TbP"/>
-                                            <constraint firstItem="kPH-RI-Bol" firstAttribute="leading" secondItem="kyp-hv-DEl" secondAttribute="trailing" constant="8" symbolic="YES" id="sGd-I9-ixc"/>
-                                            <constraint firstItem="WaK-kd-7Hz" firstAttribute="leading" secondItem="Gl9-24-7Of" secondAttribute="leading" constant="8" id="tPp-EE-WMA"/>
-                                            <constraint firstItem="q35-03-dSE" firstAttribute="top" secondItem="kyp-hv-DEl" secondAttribute="top" id="u2i-0o-Tu8"/>
-                                        </constraints>
-                                    </scrollView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0o-F7-sZs">
                                         <rect key="frame" x="0.0" y="142" width="414" height="79"/>
                                         <subviews>
@@ -769,6 +697,142 @@
                                             <constraint firstItem="QLm-ge-REB" firstAttribute="leading" secondItem="1lq-Vl-Vkb" secondAttribute="trailing" constant="39" id="uaI-05-dWx"/>
                                         </constraints>
                                     </view>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gl9-24-7Of">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="132"/>
+                                        <subviews>
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile pics" translatesAutoresizingMaskIntoConstraints="NO" id="WaK-kd-7Hz">
+                                                <rect key="frame" x="8" y="9" width="100" height="109"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="qXA-JM-5g3"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile pics" translatesAutoresizingMaskIntoConstraints="NO" id="q35-03-dSE">
+                                                <rect key="frame" x="116" y="9" width="100" height="109"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="Vkb-ka-8Oj"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile pics" translatesAutoresizingMaskIntoConstraints="NO" id="kyp-hv-DEl">
+                                                <rect key="frame" x="224" y="9" width="100" height="109"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="Nzb-FH-exX"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile pics" translatesAutoresizingMaskIntoConstraints="NO" id="kPH-RI-Bol">
+                                                <rect key="frame" x="332" y="8" width="100" height="109"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="slp-nx-ESf"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile pics" translatesAutoresizingMaskIntoConstraints="NO" id="b4z-tP-S4j">
+                                                <rect key="frame" x="440" y="9" width="100" height="109"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="Yit-Jc-a3b"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMG-4k-tf9">
+                                                <rect key="frame" x="85" y="6" width="25" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" image="Delete"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <real key="value" value="12.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="deleteImage:" destination="dmZ-4B-VfC" eventType="touchUpInside" id="8uE-zB-uib"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYl-77-OTF">
+                                                <rect key="frame" x="193" y="6" width="25" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" image="Delete"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <real key="value" value="12.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="deleteImage:" destination="dmZ-4B-VfC" eventType="touchUpInside" id="iJb-K8-1lG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeY-id-h1p">
+                                                <rect key="frame" x="301" y="6" width="25" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" image="Delete"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <real key="value" value="12.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="deleteImage:" destination="dmZ-4B-VfC" eventType="touchUpInside" id="JV8-bf-qNe"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpT-cp-fXC">
+                                                <rect key="frame" x="409" y="6" width="25" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" image="Delete"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <real key="value" value="12.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="deleteImage:" destination="dmZ-4B-VfC" eventType="touchUpInside" id="FXG-0e-8oF"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZF-Jk-PmR">
+                                                <rect key="frame" x="517" y="6" width="25" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" image="Delete"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <real key="value" value="12.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="deleteImage:" destination="dmZ-4B-VfC" eventType="touchUpInside" id="J2Q-mI-2hO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="b4z-tP-S4j" secondAttribute="trailing" constant="-126" id="5LW-zT-Od2"/>
+                                            <constraint firstAttribute="width" constant="414" id="5Oj-vF-uig"/>
+                                            <constraint firstItem="b4z-tP-S4j" firstAttribute="leading" secondItem="kPH-RI-Bol" secondAttribute="trailing" constant="8" symbolic="YES" id="9x0-7z-RR2"/>
+                                            <constraint firstItem="kyp-hv-DEl" firstAttribute="top" secondItem="b4z-tP-S4j" secondAttribute="top" id="LR4-2b-Wpa"/>
+                                            <constraint firstItem="WaK-kd-7Hz" firstAttribute="bottom" secondItem="q35-03-dSE" secondAttribute="bottom" id="NHb-Pw-4Te"/>
+                                            <constraint firstItem="kPH-RI-Bol" firstAttribute="top" secondItem="Gl9-24-7Of" secondAttribute="topMargin" id="Pi5-iH-HVL"/>
+                                            <constraint firstItem="kyp-hv-DEl" firstAttribute="bottom" secondItem="b4z-tP-S4j" secondAttribute="bottom" id="VMO-6P-m86"/>
+                                            <constraint firstAttribute="bottom" secondItem="kPH-RI-Bol" secondAttribute="bottom" constant="15" id="Xi1-Ov-6RL"/>
+                                            <constraint firstItem="WaK-kd-7Hz" firstAttribute="top" secondItem="Gl9-24-7Of" secondAttribute="top" constant="9" id="ce9-sh-JLs"/>
+                                            <constraint firstItem="kyp-hv-DEl" firstAttribute="leading" secondItem="q35-03-dSE" secondAttribute="trailing" constant="8" symbolic="YES" id="gYl-9s-Tgb"/>
+                                            <constraint firstItem="WaK-kd-7Hz" firstAttribute="top" secondItem="q35-03-dSE" secondAttribute="top" id="hEN-Yv-duq"/>
+                                            <constraint firstItem="kPH-RI-Bol" firstAttribute="centerY" secondItem="Gl9-24-7Of" secondAttribute="centerY" constant="-3.5" id="i5l-7p-HN2"/>
+                                            <constraint firstItem="q35-03-dSE" firstAttribute="bottom" secondItem="kyp-hv-DEl" secondAttribute="bottom" id="jsW-xw-Ija"/>
+                                            <constraint firstItem="q35-03-dSE" firstAttribute="leading" secondItem="WaK-kd-7Hz" secondAttribute="trailing" constant="8" symbolic="YES" id="nWt-Am-qKk"/>
+                                            <constraint firstAttribute="bottom" secondItem="WaK-kd-7Hz" secondAttribute="bottom" constant="14" id="nsK-sS-IEr"/>
+                                            <constraint firstAttribute="height" constant="132" id="pz6-CD-TbP"/>
+                                            <constraint firstItem="kPH-RI-Bol" firstAttribute="leading" secondItem="kyp-hv-DEl" secondAttribute="trailing" constant="8" symbolic="YES" id="sGd-I9-ixc"/>
+                                            <constraint firstItem="WaK-kd-7Hz" firstAttribute="leading" secondItem="Gl9-24-7Of" secondAttribute="leading" constant="8" id="tPp-EE-WMA"/>
+                                            <constraint firstItem="q35-03-dSE" firstAttribute="top" secondItem="kyp-hv-DEl" secondAttribute="top" id="u2i-0o-Tu8"/>
+                                        </constraints>
+                                    </scrollView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="N0o-F7-sZs" firstAttribute="trailing" secondItem="qGS-m6-kYW" secondAttribute="trailing" id="2yz-dL-eEL"/>
@@ -891,6 +955,11 @@
                     <connections>
                         <outlet property="BioTextLbl" destination="81k-Pp-1gX" id="oCQ-8A-d9v"/>
                         <outlet property="bioBtn" destination="y5v-0j-ebq" id="7vX-2t-TRU"/>
+                        <outlet property="deleteImg1Btn" destination="UMG-4k-tf9" id="ssw-kZ-Yl3"/>
+                        <outlet property="deleteImg2Btn" destination="IYl-77-OTF" id="A6S-TW-OvZ"/>
+                        <outlet property="deleteImg3Btn" destination="jeY-id-h1p" id="nMP-vD-hwa"/>
+                        <outlet property="deleteImg4Btn" destination="NpT-cp-fXC" id="bVW-l0-1az"/>
+                        <outlet property="deleteImg5Btn" destination="LZF-Jk-PmR" id="Dnv-6c-J4g"/>
                         <outlet property="educationBtn" destination="mnb-03-0wH" id="hfP-qQ-bQc"/>
                         <outlet property="educationLbl" destination="qVe-fD-SWj" id="Q4L-0a-loF"/>
                         <outlet property="ethnicityBtn" destination="QLm-ge-REB" id="9LU-4Y-Cka"/>
@@ -918,8 +987,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Delete" width="21" height="21"/>
         <image name="btn" width="279" height="58"/>
-        <image name="ic_remove_black_16.png" width="16" height="16"/>
         <image name="jah" width="376" height="218"/>
         <image name="profile pics" width="128" height="128"/>
         <image name="save icon" width="24" height="24"/>

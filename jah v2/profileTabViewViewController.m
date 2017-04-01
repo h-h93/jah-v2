@@ -57,6 +57,8 @@
     
     userImg5.image = [UIImage imageNamed:@"profile pics"];
     
+    
+    
     //[scrollView addSubview:settingScrollPage1];
     // [settingScrollPage1 addSubview:settingScrollPage2];
     //[settingScrollPage1 addSubview:settingScrollPage3];
@@ -172,6 +174,7 @@
      */
     if(tag == 1){
         userImg1.image = [self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
+        [self checkAndSetPics];
     }else if(tag == 2){
         userImg2.image = [self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
         [self checkAndSetPics];
@@ -218,7 +221,7 @@
         }
     }else if(tag == 3){ // check image 3
         if([imgData1 isEqual:imgData6]){
-            userImg1.image = userImg2.image;
+            userImg1.image = userImg3.image;
             userImg3.image = [UIImage imageNamed:@"profile pics"];
         }else if([imgData2 isEqual:imgData6]){
             userImg2.image = userImg3.image;
@@ -251,6 +254,8 @@
         }
     }
     
+    [self.view setNeedsLayout];
+    //clear up resources
     imgData1 = nil;
     imgData2 = nil;
     imgData3 = nil;
@@ -298,9 +303,103 @@
     return [UIImage imageWithData:imageData];
 }
 
--(IBAction)removeImage:(id)sender{
-   //remove image button press method, need to check which image was removed and shuffle them around
+-(IBAction)deleteImage:(id)sender{
+   //this is the remove image button press method, need to check which image was removed and shuffle them around
+
+    if(deleteImg1Btn.isTouchInside){
+        //userImg1.image = [UIImage imageNamed:@"profile pics"];
+        deleteBtnTag = 1;
+        NSLog(@"in button press 1, tag is: %li", tag);
+       // [self checkAndSetPics];
+    }else if(deleteImg2Btn.isTouchInside){
+        //userImg2.image = [UIImage imageNamed:@"profile pics"];
+        deleteBtnTag = 2;
+        NSLog(@"in button press 2, tag is: %li", tag);
+       // [self checkAndSetPics];
+    }else if(deleteImg3Btn.isTouchInside){
+        //userImg3.image = [UIImage imageNamed:@"profile pics"];
+        deleteBtnTag = 3;
+        NSLog(@"in button press 3, tag is: %li", tag);
+        //[self checkAndSetPics];
+    }else if(deleteImg4Btn.isTouchInside){
+        //userImg4.image = [UIImage imageNamed:@"profile pics"];
+        deleteBtnTag = 4;
+        //[self checkAndSetPics];
+    }else if(deleteImg5Btn.isTouchInside){
+       // userImg5.image = [UIImage imageNamed:@"profile pics"];
+        deleteBtnTag = 5;
+        //[self checkAndSetPics];
+    }
     
+    [self resetUserImgPosition];
+}
+
+-(void)resetUserImgPosition{
+    //hold our user images in an arraylist so we can iterate over them and shuffle them around
+    /*
+    NSMutableArray *images = [[NSMutableArray alloc] init];
+    NSMutableArray *imageData = [[NSMutableArray alloc]init];
+    
+    [imageData addObject:UIImagePNGRepresentation(userImg1.image)];
+    [imageData addObject:UIImagePNGRepresentation(userImg2.image)];
+    [imageData addObject:UIImagePNGRepresentation(userImg3.image)];
+    [imageData addObject:UIImagePNGRepresentation(userImg4.image)];
+    [imageData addObject:UIImagePNGRepresentation(userImg5.image)];
+    
+    imgData1 = UIImagePNGRepresentation(userImg1.image);
+    imgData2 = UIImagePNGRepresentation(userImg2.image);
+    imgData3 = UIImagePNGRepresentation(userImg3.image);
+    imgData4 = UIImagePNGRepresentation(userImg4.image);
+    imgData5 = UIImagePNGRepresentation(userImg5.image);
+    
+    [images addObject:userImg1.image];
+    [images addObject:userImg2.image];
+    [images addObject:userImg3.image];
+    [images addObject:userImg4.image];
+    [images addObject:userImg5.image];
+    if(deleteBtnTag == 1){
+        for(int i = 0; i < [images count]; i++){
+            if(![imageData[i] isEqual:imgData6]){
+                userImg1.image = images[i];
+                NSLog(@"which image? %i and delete button tag= %li ",i, deleteBtnTag);
+                break;
+                //userImg2.image = [UIImage imageNamed:@"profile pics"];
+            }
+        }
+    }*/
+    NSMutableArray *images = [[NSMutableArray alloc] init];
+    
+    [images addObject:userImg1.image];
+    [images addObject:userImg2.image];
+    [images addObject:userImg3.image];
+    [images addObject:userImg4.image];
+    [images addObject:userImg5.image];
+
+
+    if(deleteBtnTag == 1){
+        userImg1.image = images[1];
+        userImg2.image = images[2];
+        userImg3.image = images[3];
+        userImg4.image = images[4];
+        userImg5.image = [UIImage imageNamed:@"profile pics"];
+    }else if(deleteBtnTag == 2){
+        userImg2.image = images[2];
+        userImg3.image = images[3];
+        userImg4.image = images[4];
+        userImg5.image = [UIImage imageNamed:@"profile pics"];
+    }else if(deleteBtnTag == 3){
+        userImg3.image = images[3];
+        userImg4.image = images[4];
+        userImg5.image = [UIImage imageNamed:@"profile pics"];
+    }else if(deleteBtnTag == 4){
+        userImg4.image = images[4];
+        userImg5.image = [UIImage imageNamed:@"profile pics"];
+    }else if(deleteBtnTag == 5){
+        userImg5.image = [UIImage imageNamed:@"profile pics"];
+    }
+    
+    //remove all objects from mutable array to mark for cleanup save memory also removing objects sets it's reference count to 0 aka marked for cleanup
+    [images removeAllObjects];
 }
 /*
  //scrolling ends

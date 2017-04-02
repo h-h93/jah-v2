@@ -11,6 +11,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "AppDelegate.h"
 #import "CheckConnections.h"
+@import Firebase;
 
 @interface ViewController : UIViewController <CLLocationManagerDelegate>{
 

@@ -18,6 +18,7 @@
 		4823E18E1DB572A100C1BDEA /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4823E18D1DB572A100C1BDEA /* AVKit.framework */; };
 		4823E1901DB66E9B00C1BDEA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4823E18F1DB66E9B00C1BDEA /* CoreLocation.framework */; };
 		48480F601DE20F0F00887C56 /* firstTabScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 48480F5F1DE20F0F00887C56 /* firstTabScroll.m */; };
+		485C6C5F1E914F1E00349D31 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 485C6C5E1E914F1E00349D31 /* GoogleService-Info.plist */; };
 		4874777D1DDB840100C16154 /* peopleBtnSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4874777C1DDB840100C16154 /* peopleBtnSegue.m */; };
 		488054E61DBAAA99007B0C0D /* mainTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 488054E51DBAAA99007B0C0D /* mainTabController.m */; };
 		48A8DE331E020B210067EC8A /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A8DE321E020B210067EC8A /* AsyncImageView.m */; };
@@ -52,6 +53,7 @@
 		4844E3951DC65E2000A70224 /* jah v2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "jah v2-Bridging-Header.h"; sourceTree = "<group>"; };
 		48480F5E1DE20F0F00887C56 /* firstTabScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstTabScroll.h; sourceTree = "<group>"; };
 		48480F5F1DE20F0F00887C56 /* firstTabScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = firstTabScroll.m; sourceTree = "<group>"; };
+		485C6C5E1E914F1E00349D31 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4874777B1DDB840100C16154 /* peopleBtnSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = peopleBtnSegue.h; sourceTree = "<group>"; };
 		4874777C1DDB840100C16154 /* peopleBtnSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = peopleBtnSegue.m; sourceTree = "<group>"; };
 		488054E41DBAAA99007B0C0D /* mainTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainTabController.h; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				48D2F6751DA887FA00224A03 /* Assets.xcassets */,
 				48D2F6771DA887FA00224A03 /* LaunchScreen.storyboard */,
 				48D2F67A1DA887FA00224A03 /* Info.plist */,
+				485C6C5E1E914F1E00349D31 /* GoogleService-Info.plist */,
 				48D2F6691DA887FA00224A03 /* Supporting Files */,
 				4844E3951DC65E2000A70224 /* jah v2-Bridging-Header.h */,
 			);
@@ -256,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48D2F6791DA887FA00224A03 /* LaunchScreen.storyboard in Resources */,
+				485C6C5F1E914F1E00349D31 /* GoogleService-Info.plist in Resources */,
 				48D2F6761DA887FA00224A03 /* Assets.xcassets in Resources */,
 				48D2F6741DA887FA00224A03 /* Main.storyboard in Resources */,
 			);

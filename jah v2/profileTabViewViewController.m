@@ -57,6 +57,10 @@
     
     userImg5.image = [UIImage imageNamed:@"profile pics"];
     
+    heightLbl.text = [NSString stringWithFormat:@"%.2f cm", heightSlider.value];
+
+    weightLbl.text = [NSString stringWithFormat:@"%.2f kg", weightSlider.value];
+
     
     
     //[scrollView addSubview:settingScrollPage1];
@@ -102,7 +106,7 @@
     
     
     //setup and initialise our picker view for ethnicity popup display
-    ethnicity = @[@"White", @"Black", @"Asian", @"Latin"];
+    ethnicity = @[@"White", @"Black", @"Asian", @"Latin", @"Other"];
     
     //setup and initialise our picker view for education popup display
     education = @[@"Primary school", @"Secondary school", @"College", @"Undergraduate", @"Masters/Phd"];
@@ -188,23 +192,7 @@
         userImg5.image = [self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
         [self checkAndSetPics];
     }
-    
-    
-    // UIImageView *temp = self.checkAndSetPics;
-    /*
-     if(tag == 1){
-     userImg1.image = [info objectForKey:UIImagePickerControllerOriginalImage];
-     }else if(tag == 2){
-     userImg2.image = [info objectForKey:UIImagePickerControllerOriginalImage];
-     }else if(tag == 3){
-     userImg3.image = [info objectForKey:UIImagePickerControllerOriginalImage];
-     }else if(tag == 4){
-     userImg4.image = [info objectForKey:UIImagePickerControllerOriginalImage];
-     }else if(tag == 5){
-     userImg5.image = [info objectForKey:UIImagePickerControllerOriginalImage];
-     }
-     */
-    //[self checkAndSetPics:tag].image = [info objectForKey:UIImagePickerControllerOriginalImage];
+
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
@@ -336,37 +324,6 @@
 
 -(void)resetUserImgPosition{
     //hold our user images in an arraylist so we can iterate over them and shuffle them around
-    /*
-    NSMutableArray *images = [[NSMutableArray alloc] init];
-    NSMutableArray *imageData = [[NSMutableArray alloc]init];
-    
-    [imageData addObject:UIImagePNGRepresentation(userImg1.image)];
-    [imageData addObject:UIImagePNGRepresentation(userImg2.image)];
-    [imageData addObject:UIImagePNGRepresentation(userImg3.image)];
-    [imageData addObject:UIImagePNGRepresentation(userImg4.image)];
-    [imageData addObject:UIImagePNGRepresentation(userImg5.image)];
-    
-    imgData1 = UIImagePNGRepresentation(userImg1.image);
-    imgData2 = UIImagePNGRepresentation(userImg2.image);
-    imgData3 = UIImagePNGRepresentation(userImg3.image);
-    imgData4 = UIImagePNGRepresentation(userImg4.image);
-    imgData5 = UIImagePNGRepresentation(userImg5.image);
-    
-    [images addObject:userImg1.image];
-    [images addObject:userImg2.image];
-    [images addObject:userImg3.image];
-    [images addObject:userImg4.image];
-    [images addObject:userImg5.image];
-    if(deleteBtnTag == 1){
-        for(int i = 0; i < [images count]; i++){
-            if(![imageData[i] isEqual:imgData6]){
-                userImg1.image = images[i];
-                NSLog(@"which image? %i and delete button tag= %li ",i, deleteBtnTag);
-                break;
-                //userImg2.image = [UIImage imageNamed:@"profile pics"];
-            }
-        }
-    }*/
     NSMutableArray *images = [[NSMutableArray alloc] init];
     
     [images addObject:userImg1.image];
@@ -374,7 +331,6 @@
     [images addObject:userImg3.image];
     [images addObject:userImg4.image];
     [images addObject:userImg5.image];
-
 
     if(deleteBtnTag == 1){
         userImg1.image = images[1];
@@ -401,26 +357,7 @@
     //remove all objects from mutable array to mark for cleanup save memory also removing objects sets it's reference count to 0 aka marked for cleanup
     [images removeAllObjects];
 }
-/*
- //scrolling ends
- - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
- // Test the offset and calculate the current page after scrolling ends
- 
- //find the page number you are on
- CGFloat pageWidth = scrollView.frame.size.width;
- int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
- NSLog(@"Scrolling - You are now on page %i",page);
- }
- 
-dragging ends, please switch off paging to listen for this event
- - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *) targetContentOffset NS_AVAILABLE_IOS(5_0){
- //find the page number you are on
- CGFloat pageWidth = scrollView.frame.size.width;
- int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
- NSLog(@"Dragging - You are now on page %i",page);
- 
- }
- */
+
 
 #pragma mark changePage
 #pragma mark - UIScrollViewDelegate

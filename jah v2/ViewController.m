@@ -106,6 +106,7 @@
 
 -(void)loadDestinationVC{
     if([FBSDKAccessToken currentAccessToken] != nil && connectedToNet == YES){
+        [FIRApp configure];
         [self performSegueWithIdentifier:@"proceedToTab" sender:nil];
         NSLog(@"connected to net? %i",connectedToNet);
     }else{

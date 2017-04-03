@@ -13,7 +13,7 @@
 #import "CheckConnections.h"
 @import Firebase;
 
-@interface ViewController : UIViewController <CLLocationManagerDelegate>{
+@interface ViewController : UIViewController <CLLocationManagerDelegate, FBSDKLoginButtonDelegate>{
 
     
     IBOutlet UIView *logInView;    

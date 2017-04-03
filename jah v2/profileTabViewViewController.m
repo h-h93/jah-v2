@@ -95,7 +95,7 @@
         }
         else
         {
-            currentScrollView.backgroundColor = [UIColor yellowColor];
+            currentScrollView = settingScrollPage3;
         }
         [scrollView addSubview:currentScrollView];
         [self.view addSubview:scrollView];

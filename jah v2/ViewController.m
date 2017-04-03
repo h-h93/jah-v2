@@ -110,7 +110,7 @@
         [self performSegueWithIdentifier:@"proceedToTab" sender:nil];
         NSLog(@"connected to net? %i",connectedToNet);
     }else{
-        
+        //print error alert message
     }
 }
 

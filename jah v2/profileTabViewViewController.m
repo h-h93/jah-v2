@@ -10,17 +10,17 @@
 #import "SDWebImage/UIImageView+WebCache.h"
 
 @interface profileTabViewViewController ()
-
-@property (nonatomic) YIPopupTextView* popupTextView;
-
-@end
+    
+    @property (nonatomic) YIPopupTextView* popupTextView;
+    
+    @end
 
 @implementation profileTabViewViewController
-
-
+    
+    
 #define SCROLLWIDTH 414
 #define MAS_SHORTHAND
-
+    
 - (void)viewDidLoad {
     [super viewDidLoad];
     //show status bar
@@ -58,9 +58,9 @@
     userImg5.image = [UIImage imageNamed:@"profile pics"];
     
     heightLbl.text = [NSString stringWithFormat:@"%.2f cm", heightSlider.value];
-
+    
     weightLbl.text = [NSString stringWithFormat:@"%.2f kg", weightSlider.value];
-
+    
     
     
     //[scrollView addSubview:settingScrollPage1];
@@ -102,19 +102,22 @@
         
     }
     
-
-    
-    
     //setup and initialise our picker view for ethnicity popup display
     ethnicity = @[@"White", @"Black", @"Asian", @"Latin", @"Other"];
     
     //setup and initialise our picker view for education popup display
     education = @[@"Primary school", @"Secondary school", @"College", @"Undergraduate", @"Masters/Phd"];
-   
-
     
+    //setup and initialise our picker view for hair colour popup display
+    hairColourArr = @[@"Black", @"Brown",@"Blonde",@"Auburn",@"Red", @"Grey",@"Other",@"N/A"];
+    
+    //setup and initialise our picker view for eye colour popup display
+    eyeColourArr = @[@"Amber", @"Blue",@"Brown",@"Grey",@"Green", @"Hazel",@"Other",@"N/A"];
+    
+    //setup and initialise our picker view for body build popup display
+    bodyBuildArr = @[@"Athletic", @"Muscular",@"Average",@"Slim",@"Chubby", @"N/A"];
 }
-
+    
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self.view setNeedsLayout];
@@ -122,21 +125,21 @@
     // NSLog(@"assets 0 is: %@",self.assets[0]);
     
 }
-
+    
 - (void)viewDidLayoutSubviews{
     [imageSelectorScroll setContentSize:CGSizeMake(590, imageSelectorScroll.frame.size.height)];
-    [settingScrollPage1 setContentSize:CGSizeMake(settingScrollPage1.frame.size.width, settingScrollPage1.frame.size.height+200)];
+    [settingScrollPage1 setContentSize:CGSizeMake(settingScrollPage1.frame.size.width, settingScrollPage1.frame.size.height+270)];
     
 }
-
+    
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-/////////////// image picker methods begin ////////////////////////////////////
-
+    
+    
+    /////////////// image picker methods begin ////////////////////////////////////
+    
 - (IBAction)tappedImage:(UITapGestureRecognizer*)sender{
     imgData1 = UIImagePNGRepresentation(userImg1.image);
     imgData2 = UIImagePNGRepresentation(userImg2.image);
@@ -163,43 +166,43 @@
     [self presentViewController:ipc animated:YES completion:nil];
     
 }
-
-#pragma mark - ImagePickerController Delegate
-
--(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    [picker dismissViewControllerAnimated:YES completion:nil];
     
-    //[self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
-    /*
-     NSData *imageData = [[NSData alloc] initWithData:UIImageJPEGRepresentation(([info objectForKey:UIImagePickerControllerOriginalImage]), 1.0)];
-     int imageSize = imageData.length;
-     NSLog(@"SIZE OF IMAGE: %i ", imageSize);
-     */
-    if(tag == 1){
-        userImg1.image = [self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
-        [self checkAndSetPics];
-    }else if(tag == 2){
-        userImg2.image = [self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
-        [self checkAndSetPics];
-    }else if(tag == 3){
-        userImg3.image = [self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
-        [self checkAndSetPics];
-    }else if(tag == 4){
-        userImg4.image = [self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
-        [self checkAndSetPics];
-    }else if(tag == 5){
-        userImg5.image = [self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
-        [self checkAndSetPics];
+#pragma mark - ImagePickerController Delegate
+    
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+    {
+        [picker dismissViewControllerAnimated:YES completion:nil];
+        
+        //[self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
+        /*
+         NSData *imageData = [[NSData alloc] initWithData:UIImageJPEGRepresentation(([info objectForKey:UIImagePickerControllerOriginalImage]), 1.0)];
+         int imageSize = imageData.length;
+         NSLog(@"SIZE OF IMAGE: %i ", imageSize);
+         */
+        if(tag == 1){
+            userImg1.image = [self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
+            [self checkAndSetPics];
+        }else if(tag == 2){
+            userImg2.image = [self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
+            [self checkAndSetPics];
+        }else if(tag == 3){
+            userImg3.image = [self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
+            [self checkAndSetPics];
+        }else if(tag == 4){
+            userImg4.image = [self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
+            [self checkAndSetPics];
+        }else if(tag == 5){
+            userImg5.image = [self compressImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
+            [self checkAndSetPics];
+        }
+        
     }
-
-}
-
+    
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-{
-    [picker dismissViewControllerAnimated:YES completion:nil];
-}
-
+    {
+        [picker dismissViewControllerAnimated:YES completion:nil];
+    }
+    
 - (void)checkAndSetPics{
     // check all the images and see which ones equal default image in order then we populate each image in order from 1 to 5 depending on how many images there are
     if(tag == 2){ //  check image 2
@@ -251,7 +254,7 @@
     imgData5 = nil;
     
 }
-
+    
 - (UIImage *)compressImage:(UIImage *)image{
     float actualHeight = image.size.height;
     float actualWidth = image.size.width;
@@ -290,20 +293,20 @@
     //NSLog(@"SIZE OF IMAGE: %i ", imageSize);
     return [UIImage imageWithData:imageData];
 }
-
+    
 -(IBAction)deleteImage:(id)sender{
-   //this is the remove image button press method, need to check which image was removed and shuffle them around
-
+    //this is the remove image button press method, need to check which image was removed and shuffle them around
+    
     if(deleteImg1Btn.isTouchInside){
         //userImg1.image = [UIImage imageNamed:@"profile pics"];
         deleteBtnTag = 1;
         NSLog(@"in button press 1, tag is: %li", tag);
-       // [self checkAndSetPics];
+        // [self checkAndSetPics];
     }else if(deleteImg2Btn.isTouchInside){
         //userImg2.image = [UIImage imageNamed:@"profile pics"];
         deleteBtnTag = 2;
         NSLog(@"in button press 2, tag is: %li", tag);
-       // [self checkAndSetPics];
+        // [self checkAndSetPics];
     }else if(deleteImg3Btn.isTouchInside){
         //userImg3.image = [UIImage imageNamed:@"profile pics"];
         deleteBtnTag = 3;
@@ -314,14 +317,14 @@
         deleteBtnTag = 4;
         //[self checkAndSetPics];
     }else if(deleteImg5Btn.isTouchInside){
-       // userImg5.image = [UIImage imageNamed:@"profile pics"];
+        // userImg5.image = [UIImage imageNamed:@"profile pics"];
         deleteBtnTag = 5;
         //[self checkAndSetPics];
     }
     
     [self resetUserImgPosition];
 }
-
+    
 -(void)resetUserImgPosition{
     //hold our user images in an arraylist so we can iterate over them and shuffle them around
     NSMutableArray *images = [[NSMutableArray alloc] init];
@@ -331,7 +334,7 @@
     [images addObject:userImg3.image];
     [images addObject:userImg4.image];
     [images addObject:userImg5.image];
-
+    
     if(deleteBtnTag == 1){
         userImg1.image = images[1];
         userImg2.image = images[2];
@@ -357,39 +360,39 @@
     //remove all objects from mutable array to mark for cleanup save memory also removing objects sets it's reference count to 0 aka marked for cleanup
     [images removeAllObjects];
 }
-
-
+    
+    
 #pragma mark changePage
 #pragma mark - UIScrollViewDelegate
-
+    
 - (IBAction)changePage:(id)sender{
     [scrollView scrollRectToVisible:CGRectMake(SCROLLWIDTH*pageControl.currentPage, scrollView.frame.origin.y, SCROLLWIDTH, scrollView.frame.size.height) animated:YES];
 }
-
+    
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)sender {
     /*if(self.lastContentOffset > scrollView.contentOffset.y || self.lastContentOffset < scrollView.contentOffset.y){
-         [imageSelectorScroll setScrollEnabled:NO];
-    }
-    self.lastContentOffset = scrollView.contentOffset.y;*/
+     [imageSelectorScroll setScrollEnabled:NO];
+     }
+     self.lastContentOffset = scrollView.contentOffset.y;*/
     [self setIndiactorForCurrentPage];
     
 }
-
+    
 - (void)setIndiactorForCurrentPage{
     uint page = scrollView.contentOffset.x / SCROLLWIDTH;
     [pageControl setCurrentPage:page];
     NSLog(@"current page is: %u", page);
     
 }
-
-
-//IBAction for edit button presses to alter bio
-
+    
+    
+    //IBAction for edit button presses to alter bio
+    
 - (BOOL)prefersStatusBarHidden{
     //    return !!_popupTextView;
     return shouldHideStatusBar;
 }
-
+    
 - (UIStatusBarStyle)preferredStatusBarStyle{
     if (_popupTextView) {
         return UIStatusBarStyleLightContent;    // white text
@@ -398,9 +401,9 @@
         return UIStatusBarStyleDefault;         // black text
     }
 }
-
-/////////////////////////////// Biography button action method starts ///////////////////////////////
-
+    
+    /////////////////////////////// Biography button action method starts ///////////////////////////////
+    
 - (IBAction)bioBtnPress:(id)sender{
     shouldHideStatusBar = YES;
     [self setNeedsStatusBarAppearanceUpdate];
@@ -427,7 +430,7 @@
     _popupTextView = popupTextView;
     
 }
-
+    
 - (void)popupTextView:(YIPopupTextView *)textView willDismissWithText:(NSString *)text cancelled:(BOOL)cancelled{
     NSLog(@"will dismiss: cancelled=%d",cancelled);
     //self.textView.text = text;
@@ -438,12 +441,12 @@
     
     BioTextLbl.text = text;
 }
-
-/////////////////////////////// Biography button action ends//////////////////////
-
-
-/////////////////////// Ethnicity and Education button controll picker begins ///////////////////////////////////
-
+    
+    /////////////////////////////// Biography button action ends//////////////////////
+    
+    
+    /////////////////////// Ethnicity and Education, hair colour, eye colour and body build controll picker begins ///////////////////////////////////
+    
 - (IBAction)ethnicityBtnPress:(id)sender{
     [ActionSheetStringPicker showPickerWithTitle:@"Select ethnicity"
                                             rows:ethnicity
@@ -459,7 +462,7 @@
                                           origin:sender];
     // You can also use self.view if you don't have a sender
 }
-
+    
 - (IBAction)educationBtnPress:(id)sender {
     [ActionSheetStringPicker showPickerWithTitle:@"Select highest education"
                                             rows:education
@@ -474,37 +477,76 @@
                                      }
                                           origin:sender];
 }
-
-
-//set height and weight
+    
+- (IBAction)setHairColour:(id)sender{
+    [ActionSheetStringPicker showPickerWithTitle:@"Select hair colour"
+                                            rows:hairColourArr
+                                initialSelection:0
+                                       doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+                                           hairColourLbl.text = selectedValue;
+                                       } cancelBlock:^(ActionSheetStringPicker *picker) {
+                                           
+                                       }
+                                          origin:sender];
+}
+    
+- (IBAction)setEyeColour:(id)sender{
+    [ActionSheetStringPicker showPickerWithTitle:@"Select eye colour"
+                                            rows:eyeColourArr
+                                initialSelection:0
+                                       doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+                                           eyeColourLbl.text = selectedValue;
+                                       } cancelBlock:^(ActionSheetStringPicker *picker) {
+                                           
+                                       }
+                                          origin:sender];
+}
+    
+- (IBAction)setBodyBuild:(id)sender{
+    [ActionSheetStringPicker showPickerWithTitle:@"Select body type"
+                                            rows:bodyBuildArr
+                                initialSelection:0
+                                       doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+                                           bodyBuildLbl.text = selectedValue;
+                                       } cancelBlock:^(ActionSheetStringPicker *picker) {
+                                           
+                                       }
+                                          origin:sender];
+}
+    
+    
+    //set height and weight
 - (IBAction)setHeight:(id)sender {
+    float increment = 0.5;
+    float newValue = heightSlider.value /increment;
+    heightSlider.value = floor(newValue) * increment;
     heightLbl.text = [NSString stringWithFormat:@"%.2f cm", heightSlider.value];
     NSLog(@"height label val is %@",heightLbl.text);
 }
-
+    
 - (IBAction)setWeight:(id)sender {
     weightLbl.text = [NSString stringWithFormat:@"%.2f kg", weightSlider.value];
     NSLog(@"weight label val is %@",weightLbl.text);
 }
-
-//send the settings to the database to update user settings send it after user performs setting changes i.e at the end of set height IBAction event
+    
+    //send the settings to the database to update user settings send it after user performs setting changes i.e at the end of set height IBAction event
 - (void)updateSettingsFirebase:(float)height :(float)weight :(NSString*)bio :(NSString *)education{
     
 }
-
-
-
-//////////////////////// Ethnicity and biography controll picker methods end //////////////////////////////////////////
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
-
-
-
-@end
+    
+    
+    
+    //////////////////////// Ethnicity and biography controll picker methods end //////////////////////////////////////////
+    /*
+     #pragma mark - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+     // Get the new view controller using [segue destinationViewController].
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+    
+    
+    @end

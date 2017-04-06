@@ -54,6 +54,9 @@
     IBOutlet UIButton *bioBtn;
     IBOutlet UIButton *ethnicityBtn;
     IBOutlet UIButton *educationBtn;
+    IBOutlet UIButton *hairColourBtn;
+    IBOutlet UIButton *eyeColourBtn;
+    IBOutlet UIButton *bodyBuildBtn;
     
     //bio text label
     IBOutlet UILabel *BioTextLbl;
@@ -68,6 +71,18 @@
     //education label and ui picker array for selection
     NSArray *education;
     IBOutlet UITextField *educationLbl;
+    
+    //hair colour label and ui picker array for selection
+    NSArray *hairColourArr;
+    IBOutlet UITextField *hairColourLbl;
+    
+    //eye colour label and ui picker array for selection
+    NSArray *eyeColourArr;
+    IBOutlet UITextField *eyeColourLbl;
+    
+    //body build label and ui picker array for selection
+    NSArray * bodyBuildArr;
+    IBOutlet UITextField *bodyBuildLbl;
     
     //setting sliders and label
     IBOutlet UISlider *heightSlider;
@@ -100,6 +115,12 @@
 - (IBAction)setWeight:(id)sender;
 
 - (IBAction)deleteImage:(id)sender;
+
+- (IBAction)setHairColour:(id)sender;
+
+- (IBAction)setEyeColour:(id)sender;
+
+- (IBAction)setBodyBuild:(id)sender;
 
 @property(nonatomic)CGFloat lastContentOffset;
 

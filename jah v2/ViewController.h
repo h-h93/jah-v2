@@ -11,6 +11,8 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "AppDelegate.h"
 #import "CheckConnections.h"
+#import "connectFirebase.h"
+
 @import Firebase;
 
 @interface ViewController : UIViewController <CLLocationManagerDelegate, FBSDKLoginButtonDelegate>{
@@ -24,8 +26,8 @@
     CLLocationManager *locationManager;
     CLGeocoder *geocoder;
     CLPlacemark *placemark;
-    
-    
+    connectFirebase *connectFirebaseC;
+    //BOOL connectedFB;
 }
 @property BOOL loggedInVar;
 

@@ -21,7 +21,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb668946796603184</string>
+				<string>fb701784616670454</string>
 			</array>
 		</dict>
 		<dict>
@@ -36,9 +36,9 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>FacebookAppID</key>
-	<string>668946796603184</string>
+	<string>701784616670454</string>
 	<key>FacebookDisplayName</key>
-	<string>TestApp</string>
+	<string>hanif.jah-v2</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>

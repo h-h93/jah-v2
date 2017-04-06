@@ -37,7 +37,7 @@
     }
     [locationManager startUpdatingLocation];
     
- 
+    connectFirebaseC = [[connectFirebase alloc] init];
     
     
     
@@ -106,12 +106,27 @@
 
 -(void)loadDestinationVC{
     if([FBSDKAccessToken currentAccessToken] != nil && connectedToNet == YES){
-        [FIRApp configure];
+        connectFirebaseC.ConnectToFirebase;
         [self performSegueWithIdentifier:@"proceedToTab" sender:nil];
+        
         NSLog(@"connected to net? %i",connectedToNet);
     }else{
         //print error alert message
     }
+}
+
+- (void) initialiseUser{
+    FIRAuth *handle = [[FIRAuth auth]
+                   addAuthStateDidChangeListener:^(FIRAuth *_Nonnull auth, FIRUser *_Nullable user) {
+                       // ...
+                       if ([FIRAuth auth].currentUser) {
+                           // User is signed in.
+                           // ...
+                       } else {
+                           // No user is signed in.
+                           // ...
+                       }
+                   }];
 }
 
 - (void)unwindForSegue:(UIStoryboardSegue *)unwindSegue towardsViewController:(UIViewController *)subsequentVC{

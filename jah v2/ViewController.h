@@ -31,6 +31,8 @@
 }
 @property BOOL loggedInVar;
 
+@property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
+
 - (void)LoggedIn;
 
 - (void)networkStatus;

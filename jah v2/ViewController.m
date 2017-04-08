@@ -39,6 +39,10 @@
     
     connectFirebaseC = [[connectFirebase alloc] init];
     
+    if ([FBSDKAccessToken currentAccessToken]) {
+        [self loadDestinationVC];
+    }
+    
     
     
     /*
@@ -112,22 +116,10 @@
         NSLog(@"connected to net? %i",connectedToNet);
     }else{
         //print error alert message
+        NSLog(@"Error no netowrk or not signed in");
     }
 }
 
-- (void) initialiseUser{
-    FIRAuth *handle = [[FIRAuth auth]
-                   addAuthStateDidChangeListener:^(FIRAuth *_Nonnull auth, FIRUser *_Nullable user) {
-                       // ...
-                       if ([FIRAuth auth].currentUser) {
-                           // User is signed in.
-                           // ...
-                       } else {
-                           // No user is signed in.
-                           // ...
-                       }
-                   }];
-}
 
 - (void)unwindForSegue:(UIStoryboardSegue *)unwindSegue towardsViewController:(UIViewController *)subsequentVC{
     
@@ -160,6 +152,29 @@
          } else {
              NSLog(@"Logged in");
          }
+     }];
+    
+    [self loadDestinationVC];
+}
+
+- (void)loginButton:(FBSDKLoginButton *)loginButton
+didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
+              error:(NSError *)error {
+    if (error == nil) {
+        // ...
+    } else {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}
+
+-(void) grabFBDetails{
+    NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
+    [parameters setValue:@"id,name,email" forKey:@"fields"];
+    
+    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:parameters]
+     startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
+                                  id result, NSError *error) {
+         aHandler(result, error);
      }];
 }
 

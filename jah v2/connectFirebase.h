@@ -14,12 +14,13 @@
 @interface connectFirebase : NSObject {
     BOOL exists;
     BOOL connected;
+    FIRAuthCredential *credential;
 }
 
 @property (strong, nonatomic) FIRDatabaseReference *ref;
 
 -(BOOL)ConnectToFirebase;
 
--(BOOL)userExists;
+-(void)userExists;
 
 @end

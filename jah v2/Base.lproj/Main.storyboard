@@ -63,12 +63,9 @@
                                     <constraint firstAttribute="width" constant="239" id="z8l-3C-pEd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" image="btn">
+                                <state key="normal" image="btn" backgroundImage="btn">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="loginAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="QBY-fX-RxY"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -81,8 +78,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="fbBtn" destination="iNU-0n-uvu" id="IKB-sY-Lv5"/>
                         <outlet property="logInView" destination="8bC-Xf-vdC" id="UFn-8c-aYK"/>
+                        <outlet property="loginButton" destination="iNU-0n-uvu" id="vc5-IG-bbq"/>
                         <segue destination="vxn-QK-ghE" kind="presentation" identifier="proceedToTab" customClass="ViewControllerCustomSegue" modalTransitionStyle="flipHorizontal" id="zfs-3M-iZH"/>
                     </connections>
                 </viewController>

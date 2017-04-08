@@ -21,11 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    fbBtn = [[UIButton alloc] init];
+    //fbBtn = [[UIButton alloc] init];
     
     // put the code below in to own method and if not connected to network show pop up and remove user facebook token have to put it in view did appear as view did load will not show alert because the main view is still being set up
     
    // [self networkStatus];
+    [self loginButton].delegate = self;
     
     geocoder = [[CLGeocoder alloc] init];
     if (locationManager == nil)
@@ -75,9 +76,9 @@
     // fbBtn.hidden = YES;
     [super viewDidLoad];
     [self networkStatus]; // maybe move this call after animation colour call
-    [UIView animateWithDuration:1.0 animations:^{
-        logInView.backgroundColor = [UIColor redColor];
-    }];
+   // [UIView animateWithDuration:1.0 animations:^{
+      //  logInView.backgroundColor = [UIColor redColor];
+    //}];
     NSLog(@"in view did appear");
     [self loadDestinationVC];
     
@@ -138,44 +139,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)loginAction {
-    
-    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-    [login
-     logInWithReadPermissions: @[@"public_profile", @"email"]
-     fromViewController:self
-     handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
-         if (error) {
-             NSLog(@"Process error");
-         } else if (result.isCancelled) {
-             NSLog(@"Cancelled");
-         } else {
-             NSLog(@"Logged in");
-         }
-     }];
-    
-    [self loadDestinationVC];
-}
-
 - (void)loginButton:(FBSDKLoginButton *)loginButton
 didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
               error:(NSError *)error {
     if (error == nil) {
-        // ...
+        [self grabFBDetails];
+        [self loadDestinationVC];
     } else {
         NSLog(@"%@", error.localizedDescription);
     }
 }
 
 -(void) grabFBDetails{
-    NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
-    [parameters setValue:@"id,name,email" forKey:@"fields"];
-    
-    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:parameters]
-     startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
-                                  id result, NSError *error) {
-         aHandler(result, error);
-     }];
+    self.loginButton.readPermissions =
+    @[@"public_profile", @"email"];
 }
 
 

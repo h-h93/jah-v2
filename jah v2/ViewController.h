@@ -20,7 +20,7 @@
     
     IBOutlet UIView *logInView;    
     IBOutlet UILabel *titleLbl;
-    IBOutlet UIButton *fbBtn;
+    IBOutlet FBSDKLoginButton *fbBtn;
     BOOL loggedInVar;
     BOOL connectedToNet;
     CLLocationManager *locationManager;

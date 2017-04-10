@@ -10,28 +10,31 @@
 
 @implementation connectFirebase
 
--(BOOL)ConnectToFirebase{
+-(void)ConnectToFirebases:(FBSDKAccessToken *)currentAccessToken{
+    //really important you initialise the reference first to the root node or any node you wish to write data to in the database, otherwise nothing will ever write to the database
+    _ref = [[FIRDatabase database] reference];
     
     //authenticate and sign up to firebase
     credential = [FIRFacebookAuthProvider
-                                     credentialWithAccessToken:[FBSDKAccessToken currentAccessToken]
+                                     credentialWithAccessToken:currentAccessToken
                                      .tokenString];
+
     //self.ref = [[FIRDatabase database] reference];
     NSString *userID = [FIRAuth auth].currentUser.uid;
-    //NSLog(@"user id is %@", userID);
+    NSLog(@"user id is %@", userID);
     if(userID == NULL){
-        NSLog(@"user id is %@", userID);
         [[FIRAuth auth] signInWithCredential:credential
                                   completion:^(FIRUser *user, NSError *error) {
                                       if(error){
                                           NSLog(@"Firebase login error");
                                       }
-                                      [self firstTimeLogin];
                                   }];
+        NSLog(@"user id is %@", userID);
+        [self performSelector:@selector(firstTimeLogin) withObject:nil afterDelay:6.0];
+        
     }else{
-    [self userExists];
+    [self registeredUser];
     }
-
     /*
      [[FIRAuth auth] signInWithCredential:credential
      completion:^(FIRUser *user, NSError *error) {
@@ -47,9 +50,9 @@
      }
      }];
      */
-    return connected;
+    //return connected;
 }
-
+/*
 -(void)userExists{
     self.ref = [[FIRDatabase database] reference];
     NSString *userID = [FIRAuth auth].currentUser.uid;
@@ -71,15 +74,24 @@
     }];
     //return exists;
 }
+*/
 
 -(void)firstTimeLogin{
-  //  NSString *key = [[_ref child:@"Users"] childByAutoId];
-    NSDictionary *post = @{@"ID": [FIRAuth auth].currentUser.uid,
-                           @"accountStatus": @"clean",
-                           @"age": @"21",
-                           @"bio": @"rekt"};
-    NSDictionary *childUpdates = @{[@"/Users/" stringByAppendingString:[FIRAuth auth].currentUser.uid]: post};
-    [_ref updateChildValues:childUpdates];
+    //NSString *key = [[_ref child:@"Users"] childByAutoId];
+    [[[_ref child:@"Users"] child:[FIRAuth auth].currentUser.uid]
+     setValue:@{@"ID": [FIRAuth auth].currentUser.uid,
+                @"accountStatus": @"clean",
+                @"age": @"21",
+                @"bio": @"dead"}
+     ];
+    //[[[_ref child:@"Users"] child:@"ID"] setValue:[FIRAuth auth].currentUser.uid];
+    
+    /*
+     @"ID": [FIRAuth auth].currentUser.uid,
+     @"accountStatus": @"clean",
+     @"age": @"21",
+     @"bio": @"rekt"
+     */
     connected = YES;
 }
 
@@ -91,6 +103,7 @@
                                       NSLog(@"Firebase login error");
                                       connected = NO;
                                   }
+                                  NSLog(@"I'm registered");
                                   
     }];
     

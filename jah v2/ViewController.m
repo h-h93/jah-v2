@@ -111,7 +111,7 @@
 
 -(void)loadDestinationVC{
     if([FBSDKAccessToken currentAccessToken] != nil && connectedToNet == YES){
-        connectFirebaseC.ConnectToFirebase;
+        [connectFirebaseC ConnectToFirebases:[FBSDKAccessToken currentAccessToken]];
         [self performSegueWithIdentifier:@"proceedToTab" sender:nil];
         
         NSLog(@"connected to net? %i",connectedToNet);

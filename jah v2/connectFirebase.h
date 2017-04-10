@@ -19,7 +19,7 @@
 
 @property (strong, nonatomic) FIRDatabaseReference *ref;
 
--(BOOL)ConnectToFirebase;
+-(void)ConnectToFirebases:(FBSDKAccessToken *)currentAccessToken;
 
 -(void)userExists;
 

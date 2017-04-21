@@ -12,14 +12,14 @@
 
 -(void)ConnectToFirebases:(FBSDKAccessToken *)currentAccessToken{
     //really important you initialise the reference first to the root node or any node you wish to write data to in the database, otherwise nothing will ever write to the database
-    [self getFacebookData];
+        [self getFacebookData];
     _ref = [[FIRDatabase database] reference];
     
     //authenticate and sign up to firebase
     credential = [FIRFacebookAuthProvider
-                                     credentialWithAccessToken:currentAccessToken
-                                     .tokenString];
-
+                  credentialWithAccessToken:currentAccessToken
+                  .tokenString];
+    
     //self.ref = [[FIRDatabase database] reference];
     NSString *userID = [FIRAuth auth].currentUser.uid;
     NSLog(@"user id is %@", userID);
@@ -34,13 +34,13 @@
         [self performSelector:@selector(firstTimeLogin) withObject:nil afterDelay:6.0];
         
     }else{
-    [self registeredUser];
+        [self registeredUser];
     }
-
-    //return connected;
 }
 
 - (void)getFacebookData{
+    NSDateFormatter *dateformatter = [[NSDateFormatter alloc]init];
+    [dateformatter setDateFormat:@"mm/dd/yyyy"];
     if ([FBSDKAccessToken currentAccessToken]) {
         [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"first_name, last_name, email, name, gender, id, birthday"}]
          startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
@@ -51,18 +51,16 @@
              name = [result objectForKey:@"name"];
              fbID = [result objectForKey:@"id"];
              gender = [result objectForKey:@"gender"];
-             age = [result objectForKey:@"birthday"];
+             NSDate *birthdate = [dateformatter dateFromString:[result objectForKey:@"birthday"]];
+             [self convertBirthdayToAge:birthdate];
+             email = [result objectForKey:@"email"];
              //NSLog(@"%@", [result objectForKey:@"birthday"]);
              
          }];
     }
-    
-    NSLog(@"bday is: %@",age);
 }
 
 -(void)convertBirthdayToAge:(NSDate *)date{
-
-    
     NSDate* now = [NSDate date];
     NSDateComponents* ageComponents = [[NSCalendar currentCalendar]
                                        components:NSCalendarUnitYear
@@ -70,6 +68,7 @@
                                        toDate:now
                                        options:0];
     age = [NSString stringWithFormat:@"%li",(long)[ageComponents year]];
+    NSLog(@"age is %@", age);
 }
 
 -(void)firstTimeLogin{
@@ -78,11 +77,15 @@
     [[[_ref child:@"Users"] child:[FIRAuth auth].currentUser.uid]
      setValue:@{@"ID": [FIRAuth auth].currentUser.uid,
                 @"accountStatus": @"clean",
-                @"age": @"30",
+                @"age": age,
                 @"appInfo": version,
-                @"bio": @" "}
+                @"bio": @" ",
+                @"email": email,
+                @"ethnicity": @"",
+                @"fbID": fbID,
+                @"gender": gender}
      ];
-
+    
     connected = YES;
 }
 
@@ -96,7 +99,7 @@
                                   }
                                   NSLog(@"I'm registered");
                                   
-    }];
+                              }];
     
     
 }

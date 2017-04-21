@@ -22,6 +22,7 @@
 		48718F701E968F710077A4D2 /* connectFirebase.m in Sources */ = {isa = PBXBuildFile; fileRef = 48718F6F1E968F710077A4D2 /* connectFirebase.m */; };
 		4874777D1DDB840100C16154 /* peopleBtnSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4874777C1DDB840100C16154 /* peopleBtnSegue.m */; };
 		488054E61DBAAA99007B0C0D /* mainTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 488054E51DBAAA99007B0C0D /* mainTabController.m */; };
+		488DA82C1EA186C500BA6D57 /* updateFirebaseProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 488DA82B1EA186C500BA6D57 /* updateFirebaseProfile.m */; };
 		48A8DE331E020B210067EC8A /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A8DE321E020B210067EC8A /* AsyncImageView.m */; };
 		48AF4F271DEE58A500263F06 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AF4F261DEE58A500263F06 /* Person.m */; };
 		48D2F66B1DA887FA00224A03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D2F66A1DA887FA00224A03 /* main.m */; };
@@ -51,7 +52,6 @@
 		4823E18B1DB54E0600C1BDEA /* ViewControllerCustomSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerCustomSegue.m; sourceTree = "<group>"; };
 		4823E18D1DB572A100C1BDEA /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		4823E18F1DB66E9B00C1BDEA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		4844E3951DC65E2000A70224 /* jah v2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "jah v2-Bridging-Header.h"; sourceTree = "<group>"; };
 		48480F5E1DE20F0F00887C56 /* firstTabScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstTabScroll.h; sourceTree = "<group>"; };
 		48480F5F1DE20F0F00887C56 /* firstTabScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = firstTabScroll.m; sourceTree = "<group>"; };
 		485C6C5E1E914F1E00349D31 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -61,6 +61,8 @@
 		4874777C1DDB840100C16154 /* peopleBtnSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = peopleBtnSegue.m; sourceTree = "<group>"; };
 		488054E41DBAAA99007B0C0D /* mainTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainTabController.h; sourceTree = "<group>"; };
 		488054E51DBAAA99007B0C0D /* mainTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainTabController.m; sourceTree = "<group>"; };
+		488DA82B1EA186C500BA6D57 /* updateFirebaseProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = updateFirebaseProfile.m; sourceTree = "<group>"; };
+		488DA82D1EA186F500BA6D57 /* updateFirebaseProfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = updateFirebaseProfile.h; sourceTree = "<group>"; };
 		48A8DE311E020B210067EC8A /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
 		48A8DE321E020B210067EC8A /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		48AF4F251DEE58A500263F06 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
@@ -156,12 +158,13 @@
 				48A8DE321E020B210067EC8A /* AsyncImageView.m */,
 				48718F6F1E968F710077A4D2 /* connectFirebase.m */,
 				48718F711E968F8C0077A4D2 /* connectFirebase.h */,
+				488DA82B1EA186C500BA6D57 /* updateFirebaseProfile.m */,
+				488DA82D1EA186F500BA6D57 /* updateFirebaseProfile.h */,
 				48D2F6751DA887FA00224A03 /* Assets.xcassets */,
 				48D2F6771DA887FA00224A03 /* LaunchScreen.storyboard */,
 				48D2F67A1DA887FA00224A03 /* Info.plist */,
 				485C6C5E1E914F1E00349D31 /* GoogleService-Info.plist */,
 				48D2F6691DA887FA00224A03 /* Supporting Files */,
-				4844E3951DC65E2000A70224 /* jah v2-Bridging-Header.h */,
 			);
 			path = "jah v2";
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				4874777D1DDB840100C16154 /* peopleBtnSegue.m in Sources */,
 				48480F601DE20F0F00887C56 /* firstTabScroll.m in Sources */,
 				48AF4F271DEE58A500263F06 /* Person.m in Sources */,
+				488DA82C1EA186C500BA6D57 /* updateFirebaseProfile.m in Sources */,
 				4823E1801DB3ED7F00C1BDEA /* CheckConnections.m in Sources */,
 				48718F701E968F710077A4D2 /* connectFirebase.m in Sources */,
 				488054E61DBAAA99007B0C0D /* mainTabController.m in Sources */,

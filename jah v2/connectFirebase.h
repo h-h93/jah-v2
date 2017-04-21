@@ -15,12 +15,17 @@
     BOOL exists;
     BOOL connected;
     FIRAuthCredential *credential;
+    
+    //new user login details var
+    NSString *name;
+    NSString *age;
+    NSString *email;
+    NSString *fbID;
+    NSString *gender;
 }
 
 @property (strong, nonatomic) FIRDatabaseReference *ref;
 
 -(void)ConnectToFirebases:(FBSDKAccessToken *)currentAccessToken;
-
--(void)userExists;
 
 @end

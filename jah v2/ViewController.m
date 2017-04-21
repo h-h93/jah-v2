@@ -152,7 +152,7 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
 
 -(void) grabFBDetails{
     self.loginButton.readPermissions =
-    @[@"public_profile", @"email"];
+    @[@"public_profile", @"email", @"user_birthday", @"user_education_history", @"user_likes", @"user_photos"];
 }
 
 

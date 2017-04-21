@@ -12,6 +12,7 @@
 
 -(void)ConnectToFirebases:(FBSDKAccessToken *)currentAccessToken{
     //really important you initialise the reference first to the root node or any node you wish to write data to in the database, otherwise nothing will ever write to the database
+    [self getFacebookData];
     _ref = [[FIRDatabase database] reference];
     
     //authenticate and sign up to firebase
@@ -35,63 +36,53 @@
     }else{
     [self registeredUser];
     }
-    /*
-     [[FIRAuth auth] signInWithCredential:credential
-     completion:^(FIRUser *user, NSError *error) {
-     NSLog(@"user ID is %@ ", user.uid);
-     //if user doesn't exist then create a user with basic info filled in from facebook
-     if(self.userExists == NO){
-     [self firstTimeLogin:user.uid];
-     connected = YES;
-     }
-     if (error) {
-     NSLog(@"Firebase login error");
-     connected = NO;
-     }
-     }];
-     */
+
     //return connected;
 }
-/*
--(void)userExists{
-    self.ref = [[FIRDatabase database] reference];
-    NSString *userID = [FIRAuth auth].currentUser.uid;
-    [[[_ref child:@"Users"] child:userID] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-        // Get user value
-        if(snapshot.value != NULL){
-            exists = YES;
-            [self registeredUser];
-            NSLog(@"exists ?: %i", exists);
-        }else{
-            exists = NO;
-            [self firstTimeLogin];
-            NSLog(@"exists ?: %i", exists);
-        }
-        
-        // ...
-    } withCancelBlock:^(NSError * _Nonnull error) {
-        NSLog(@"%@", error.localizedDescription);
-    }];
-    //return exists;
+
+- (void)getFacebookData{
+    if ([FBSDKAccessToken currentAccessToken]) {
+        [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"first_name, last_name, email, name, gender, id, birthday"}]
+         startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+             if (!error) {
+                 NSLog(@"fetched user:%@", result);
+             }
+             
+             name = [result objectForKey:@"name"];
+             fbID = [result objectForKey:@"id"];
+             gender = [result objectForKey:@"gender"];
+             age = [result objectForKey:@"birthday"];
+             //NSLog(@"%@", [result objectForKey:@"birthday"]);
+             
+         }];
+    }
+    
+    NSLog(@"bday is: %@",age);
 }
-*/
+
+-(void)convertBirthdayToAge:(NSDate *)date{
+
+    
+    NSDate* now = [NSDate date];
+    NSDateComponents* ageComponents = [[NSCalendar currentCalendar]
+                                       components:NSCalendarUnitYear
+                                       fromDate:date
+                                       toDate:now
+                                       options:0];
+    age = [NSString stringWithFormat:@"%li",(long)[ageComponents year]];
+}
 
 -(void)firstTimeLogin{
-    //NSString *key = [[_ref child:@"Users"] childByAutoId];
+    NSString *version = [NSString stringWithFormat:@"%@ %@",@"IOS", [UIDevice currentDevice].systemVersion];
+    NSLog(@"%@", version);
     [[[_ref child:@"Users"] child:[FIRAuth auth].currentUser.uid]
      setValue:@{@"ID": [FIRAuth auth].currentUser.uid,
                 @"accountStatus": @"clean",
-                @"age": @"21",
-                @"bio": @"dead"}
+                @"age": @"30",
+                @"appInfo": version,
+                @"bio": @" "}
      ];
-    //[[[_ref child:@"Users"] child:@"ID"] setValue:[FIRAuth auth].currentUser.uid];
-    
-    /*
-     @"ID": [FIRAuth auth].currentUser.uid,
-     @"accountStatus": @"clean",
-     @"age": @"21",
-     @"bio": @"rekt"
-     */
+
     connected = YES;
 }
 
@@ -106,6 +97,7 @@
                                   NSLog(@"I'm registered");
                                   
     }];
+    
     
 }
 

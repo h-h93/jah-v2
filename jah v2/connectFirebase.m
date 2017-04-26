@@ -36,6 +36,7 @@
     }else{
         [self registeredUser];
     }
+
 }
 
 - (void)getFacebookData{
@@ -72,8 +73,12 @@
 }
 
 -(void)firstTimeLogin{
-    NSString *version = [NSString stringWithFormat:@"%@ %@",@"IOS", [UIDevice currentDevice].systemVersion];
-    NSLog(@"%@", version);
+    NSString *version = [NSString stringWithFormat:@"%@ %@",@"IOS", [UIDevice currentDevice].systemVersion]; //grab ios version
+    UIImage *Defaultprofilepic = UIImagePNGRepresentation([UIImage imageNamed:@"profile pics"]); //default image
+    
+    //connect to firebase storage to store userimage
+    //FIRStorageReference *storageRef = [storage reference];
+    
     [[[_ref child:@"Users"] child:[FIRAuth auth].currentUser.uid]
      setValue:@{@"ID": [FIRAuth auth].currentUser.uid,
                 @"accountStatus": @"clean",
@@ -83,9 +88,9 @@
                 @"email": email,
                 @"ethnicity": @"",
                 @"fbID": fbID,
-                @"gender": gender}
+                @"gender": gender,
+                @"images":@{@"image 1":@"rekt", @"image 2":@"rekt2"}}
      ];
-    
     connected = YES;
 }
 

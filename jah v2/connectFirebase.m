@@ -77,7 +77,7 @@
     UIImage *Defaultprofilepic = UIImagePNGRepresentation([UIImage imageNamed:@"profile pics"]); //default image
     
     //connect to firebase storage to store userimage
-    //FIRStorageReference *storageRef = [storage reference];
+    //FIRStorageReference *storageRef = [storage reference];//
     
     [[[_ref child:@"Users"] child:[FIRAuth auth].currentUser.uid]
      setValue:@{@"ID": [FIRAuth auth].currentUser.uid,

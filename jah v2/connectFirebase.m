@@ -77,7 +77,17 @@
     UIImage *Defaultprofilepic = UIImagePNGRepresentation([UIImage imageNamed:@"profile pics"]); //default image
     
     //connect to firebase storage to store userimage
-    //FIRStorageReference *storageRef = [storage reference];//
+     
+    // Get a reference to the storage service using the default Firebase App
+    FIRStorage *storage = [FIRStorage storage];
+    
+    // Create a storage reference from our storage service
+    FIRStorageReference *storageRef = [storage referenceWithPath:@"users/city_of_love.jpg"]; /*this is the directory we specify to store our image along with the filename of the image we wish to store it as e.g. in user directory we store the image witht the name city of love*/
+    UIImage *defaultImage = [UIImage imageNamed:@"profile pics"];//the image we wish to store
+    FIRStorageMetadata *metaData;
+    metaData.contentType = @"image/png";
+    NSData *data = UIImageJPEGRepresentation(defaultImage, 0);
+    FIRStorageUploadTask *uploadTask =  [storageRef putData:data metadata:metaData];
     
     [[[_ref child:@"Users"] child:[FIRAuth auth].currentUser.uid]
      setValue:@{@"ID": [FIRAuth auth].currentUser.uid,

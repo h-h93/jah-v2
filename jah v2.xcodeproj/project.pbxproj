@@ -59,6 +59,7 @@
 		48718F711E968F8C0077A4D2 /* connectFirebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = connectFirebase.h; sourceTree = "<group>"; };
 		4874777B1DDB840100C16154 /* peopleBtnSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = peopleBtnSegue.h; sourceTree = "<group>"; };
 		4874777C1DDB840100C16154 /* peopleBtnSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = peopleBtnSegue.m; sourceTree = "<group>"; };
+		487E5F001EFF3364000A6687 /* FBSDKCoreKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FBSDKCoreKit; path = Pods/FBSDKCoreKit; sourceTree = "<group>"; };
 		488054E41DBAAA99007B0C0D /* mainTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainTabController.h; sourceTree = "<group>"; };
 		488054E51DBAAA99007B0C0D /* mainTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainTabController.m; sourceTree = "<group>"; };
 		488DA82B1EA186C500BA6D57 /* updateFirebaseProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = updateFirebaseProfile.m; sourceTree = "<group>"; };
@@ -180,6 +181,7 @@
 		48D2F6811DA8881F00224A03 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				487E5F001EFF3364000A6687 /* FBSDKCoreKit */,
 				480415561DFCCA60002D6422 /* AudioToolbox.framework */,
 				4823E18F1DB66E9B00C1BDEA /* CoreLocation.framework */,
 				4823E18D1DB572A100C1BDEA /* AVKit.framework */,
@@ -303,7 +305,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EAADF81292D715E61F7797EC /* [CP] Embed Pods Frameworks */ = {
